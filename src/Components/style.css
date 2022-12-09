@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+  }
+  #background{
+    width: auto;
+    height: 400px;
+    background: #161729;
+    /* position: absolute; */
+}
+#logo{
+    position: absolute;
+    width: 20px;
+    height: 48.15px;
+    
+    font-family:Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 40px;
+    margin-top: 10px;
+    margin-left: 10px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.logbtn{
+    position: relative;
+    width: 105px;
+    height: 34px;
+    background-color: #383179;
+    border: #161729;
+    color: #FFFFFF;
+    border-radius: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+
+#sign{
+    position:absolute;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+}
+#login{
+    position:absolute;
+    right: 120px;
+    top: 5px;
+    cursor: pointer;
+}
+#hostelmanage-btn{
+
+    width: 105px;
+    height: 34px;
+    background-color: #383179;
+    border: #161729;
+    color: #FFFFFF;
+    border-radius: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position:absolute;
+    right: 235px;
+    top: 5px;
+    cursor: pointer;
+    
+
+}
+.button:hover {
+    outline-color: transparent;
+    outline-style:solid;
+    box-shadow: 0 0 0 2px #9088bd;
+
+}
+
+#searchbyname{
+    width: 30%;
+    height: 4.5%;
+    position: absolute;
+    left: 450px;
+    right: 300px;
+    top:100px;
+    border-radius: 4px;
+}
+
+/* .inputdetails-container{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+} */
+/* #facilities{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+    position: absolute;
+    left: 10%;
+    top: 30%;
+    color: antiquewhite;
+
+} */
+.inputdetails{
+    width: 15%;
+    height: 25px;
+    position:relative;
+    left: 300px;
+    top: 150px;
+    border-radius: 4px;
+   
+    
+}
+
+.checkboxfacilities{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: whitesmoke;
+    /* position: relative; */
+    margin-top: 165px;
+    margin-left: 250px;
+
+    
+
+    
+   
+}
+.search{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    width: 120px;
+    height: 35px;
+    position:relative;
+    left: 560px;
+    top: 40px;
+    color: #383179;
+    background-color: #9088bd;
+    border-color: #383179;
+    border-radius: 4px;
+    
+
+    
+}
+.search:active{
+    background-color: rgb(168, 180, 212);
+    transition: 0s;
+}
