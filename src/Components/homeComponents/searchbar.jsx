@@ -41,27 +41,27 @@ const Searchbar = () => {
                 type="checkbox"
                 id="parking"
               />
-              <label for="parking">Parking &nbsp;</label>
+              <label htmlFor="parking">Parking &nbsp;</label>
               <input
                 type="checkbox"
                 id="gym"
               />
-              <label for="gym">Gym &nbsp;</label>
+              <label htmlFor="gym">Gym &nbsp;</label>
               <input
                 type="checkbox"
                 id="laundry"
               />
-              <label for="laundry">Laundry &nbsp;</label>
+              <label htmlFor="laundry">Laundry &nbsp;</label>
               <input
                 type="checkbox"
                 id="cctv"
               />
-              <label for="cctv">CCTV &nbsp;</label>
+              <label htmlFor="cctv">CCTV &nbsp;</label>
               <input
                 type="checkbox"
                 id="wifi"
               />
-              <label for="wifi">WiFi</label>
+              <label htmlFor="wifi">WiFi</label>
             </div>
             <input
               type="button"
