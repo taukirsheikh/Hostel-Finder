@@ -11,16 +11,17 @@ const App = () => {
         <Route
           path="/"
           element={<Hostel />} // home page
-        >
+          >
+          </Route>
           <Route
-            path="manager-dashboard"
+            path="/manager-dashboard"
             element={<ManagerDashboard />}
           ></Route>
           <Route
             path="*"
             element={<NoMatch />}
           />
-        </Route>
+          
       </Routes>
     </>
   );
