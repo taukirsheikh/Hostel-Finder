@@ -6,7 +6,7 @@ const Navbar = () => {
   const navigateTo= useNavigate();
 
   const goToManagerDashboard=()=>{
-    navigateTo('hostel-manager-dashboard')
+    navigateTo('manager-dashboard')
   }
   return (
     <>

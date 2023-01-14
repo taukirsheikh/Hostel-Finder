@@ -13,7 +13,7 @@ const App = () => {
           element={<Hostel />} // home page
         >
           <Route
-            path="hostel-manager-dashboard"
+            path="manager-dashboard"
             element={<ManagerDashboard />}
           ></Route>
           <Route
