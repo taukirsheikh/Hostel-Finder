@@ -5,10 +5,13 @@
     box-sizing: border-box;
     font-family: "Lato", sans-serif;
   }
+
+  /* ___________________________hOMEpAGE________________________ */
   #background{
     width: auto;
     height: 400px;
     background: #161729;
+    background-image: linear-gradient( to right,#0D324D,#7F5A83);
     /* position: absolute; */
 }
 #logo{
@@ -128,7 +131,7 @@
     width: 120px;
     height: 35px;
     position:relative;
-    left: 560px;
+    left: 540px;
     top: 40px;
     color: #383179;
     background-color: #9088bd;
@@ -143,12 +146,18 @@
     transition: 0s;
 }
 
+/* _______________________________hOSTELmANGERdASHBOARD______________________________ */
+
+
+
+
 
 /* _________________________________________________________________________________ */
 /* -------------------------404----------------------------------------------------- */
 
 /* @import url(https://fonts.googleapis.com/css?family=Gilda+Display); */
-html {
+.body {
+    
     background: radial-gradient(#000, #111);
     color: white;
     overflow: hidden;

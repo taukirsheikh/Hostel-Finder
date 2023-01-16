@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
+import ManagerNavBar from "./ManagerNavBar";
+import "./style.css";
+// import './/style.css'
 
 function ManagerDashboard() {
   return (
-    <div>ManageDashboard</div>
-  )
+    <>
+    <ManagerNavBar/>
+    </>
+    
+  );
 }
 
-export default ManagerDashboard
+export default ManagerDashboard;

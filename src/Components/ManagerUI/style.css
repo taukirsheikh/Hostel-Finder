@@ -1,0 +1,267 @@
+/*  */
+.navBackground{
+    width: auto;
+    height: 65px;
+    
+    /* border-bottom-style: solid; */
+    /* border-bottom-color: #214862; */
+    background-image: linear-gradient( to right,#0D324D,#7F5A83);
+    /* border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px; */
+
+    /* background-image: linear-gradient(to bottom left, #161729,rgb(16, 30, 74)); */
+}
+#logo{
+    position: absolute;
+    width: 20px;
+    height: 48.15px;
+    
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+    margin-top: 0px;
+    margin-left: 10px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+
+.navItemsContainer{
+    
+   
+    position:absolute;
+/* margin-top: 20px;
+margin-left: ; */
+top: 20px;
+left: 150px;
+/* width: 100%; */
+display: flex;
+gap: 20px;
+
+
+
+
+
+/* background-color: #335368; */
+
+}
+
+.navItems{
+    
+    width: 130px;
+    height: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f8f7bf;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    cursor: pointer;
+    /* background-color: aqua; */
+    
+    border-bottom-style: solid;
+    border-bottom-color: #161729;
+    border-radius: 5px;
+    /* border-bottom-left-radius:5px ;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px; */
+    
+    
+    
+}
+
+
+
+.navItems:hover{
+    background-color:#161729;
+}
+
+.navItems:active{
+
+    background-color:#161729;
+}
+
+.userIdentity{
+    position: absolute;
+    right: 20px;
+    top:25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    color: rgb(91, 142, 225);
+    cursor: pointer;
+/* background-color: rgb(138, 135, 225); */
+}
+
+
+/* ____________________________Register-Hostel____________________________________ */
+.registerContainer{
+    position:absolute;
+    background-color: #161729;
+    height: auto;
+    /* height: 100%; */
+    
+    width: 100%;
+    
+}
+
+.registerItemsNames{
+    color: rgb(231, 224, 177);
+    margin-left: 2%;
+
+}
+
+.registerForm{
+    margin-top:20px;
+    /* background-color: red; */
+}
+.forminputfield_1{
+    /* width: 200px; */
+    height: 35px;
+    position: relative;
+    top: 10px;
+}
+
+.forminputfield_2{
+    width: 200px;
+}
+
+.nameAndpan{
+    /* background-color: gray; */
+    
+display: flex;
+gap:30px;
+
+}
+
+.dis-pla-typ{
+    display: flex;
+    gap: 30px;
+}
+
+
+.manager-contact{
+    display: flex;
+    gap:30px
+ } 
+
+ .price-of-room{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+ }
+.prices-and-name-inputs{
+    /* background-color: red; */
+    
+    display: flex;
+    align-items: center;
+    gap:5px
+    
+}
+
+/* to to inputfield in middle */
+.middle{
+    position: relative;
+    top:3px
+}
+
+.price-bg{
+    background-color: #424655;
+    padding: 10px;
+    width: 300px;
+    border-radius: 5px;
+    
+}
+
+.description{
+    height: 200px;
+    width: 600px;
+    /* text-align: left;
+    box-sizing: border-box;
+    text-align: top;?
+    resize: none; */
+}
+
+
+.checkboxsize{
+    /* height: 20px; */
+    width: 25px;
+}
+
+.facilities-items{
+    height:160px;
+    width:500px;
+    display: grid;
+    /* background-color: red; */
+    grid-template-rows:repeat(4,50px);
+    /* grid-template-columns:repeat(3,200px); */
+    grid-template-columns:100px 200px 100px;
+    
+    /* row-gap:0px;
+    column-gap:1px; */
+    /* grid-template-rows: */
+    
+}
+
+.grid-item{
+    /* background-color: green; */
+    /* width: 50px;
+    height: 50px; */
+    display:flex;
+    align-items: baseline;
+    gap: 5px;   
+    
+}
+
+
+.hostel-image{
+    /* border:solid; */
+/* background-color: red; */
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+.hostel-image-items{
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    /* background-color: rgb(205, 224, 100); */
+    width: 20rem;
+    border-radius: 5px;
+    border:1px solid rgb(49, 116, 119)
+    
+}
+.register-button{
+    width:100%;
+
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.register-button-item{
+    color: rgb(238, 239, 164);   
+    height: 45px;
+    width: 130px;
+    font-family:monospace;
+    font-size: large;
+    font-weight: bold;
+    /* color: #7F5A83; */
+    background-image: linear-gradient(to right, #2b5876 0%, #4e4376 51%, #2b5876 100%);
+   
+    border-radius: 10px;
+    /* display: block; */
+}
+.register-button-item:hover{
+    box-shadow: 0 0 10px #eee;
+    cursor: pointer;
+    /* background-position: right center; */
+    background-image: linear-gradient(to bottom, #2b5876 0%, #4e4376 51%, #2b5876 100%);
+    color: #fff;
+}
