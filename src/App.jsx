@@ -20,6 +20,8 @@ const App = () => {
             path="/manager-dashboard"
             element={<ManagerDashboard />}
           >
+            <Route index element={<Bookings/>} />
+
             <Route
               path="register-hostel"
               element={<RegisterHostel/>}
@@ -29,9 +31,11 @@ const App = () => {
               path="update-hostel"
               element={<UpdateHostel/>}
             />
+            
             <Route
               path="bookings"
               element={<Bookings/>}
+
             />
           </Route>
           <Route

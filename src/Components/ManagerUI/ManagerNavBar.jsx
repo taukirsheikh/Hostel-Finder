@@ -7,9 +7,9 @@ import { Link,Outlet } from 'react-router-dom';
 
 function ManagerNavBar() {
   return (
-    <>
+    <><header>
       <nav>
-        <header>
+        
           <div className="navBackground ">
             <NavLink to="/">
               <h1 id="logo">
@@ -43,9 +43,10 @@ function ManagerNavBar() {
             </ul>
             <span className='userIdentity'><strong>username</strong></span>
           </div>
-        </header>
+        
       </nav>
       <Outlet></Outlet>
+      </header>
     </>
   )
 }

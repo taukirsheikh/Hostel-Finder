@@ -1,4 +1,8 @@
 /*  */
+
+/* html,body{
+    height: 100%;
+    /* width:100%} */
 .navBackground{
     width: auto;
     height: 65px;
@@ -46,6 +50,15 @@ gap: 20px;
 
 /* background-color: #335368; */
 
+}
+
+
+
+/* the Navlink assings an anchor tag with class active to the clicked path in the browser */
+.navItemsContainer a.active{
+    background-color: #161729;
+    border-radius: 5px;
+    height: 50px;
 }
 
 .navItems{
@@ -265,3 +278,55 @@ gap: 10px;
     background-image: linear-gradient(to bottom, #2b5876 0%, #4e4376 51%, #2b5876 100%);
     color: #fff;
 }
+
+
+/* ________________________________UpdateHostelpage __________________________________________*/
+
+
+.hostel-container-bg{
+    color: #f8f7bf;
+    background-color: #161729;
+    position:absolute;
+    height:100%;
+    
+    width:100%;
+    
+}
+
+.hostel-list-container{
+
+
+
+background-color: #424655;
+width:fit-content;
+display: flex;
+flex-direction: column;
+gap: 10px;
+padding: 10px;
+border-radius: 5px;
+margin-left: 10px;
+
+
+    
+}
+
+.hostel-list-container ul{
+    list-style-type: none;
+    border-radius: 5px;
+    border:1px solid rgb(45,116,119);
+    padding: 5px;
+    font-weight: bold;
+    
+
+}
+
+.hostel-list-container ul:hover{
+    background-color:#161729;
+    cursor: pointer;
+    border:none;
+    
+    
+
+}
+
+
