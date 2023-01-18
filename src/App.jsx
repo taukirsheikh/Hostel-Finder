@@ -20,6 +20,7 @@ const App = () => {
             path="/manager-dashboard"
             element={<ManagerDashboard />}
           >
+            {/* must be defined on top to get to index */}
             <Route index element={<Bookings/>} />
 
             <Route

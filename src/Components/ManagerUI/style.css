@@ -56,10 +56,15 @@ gap: 20px;
 
 /* the Navlink assings an anchor tag with class active to the clicked path in the browser */
 .navItemsContainer a.active{
+    
+    
     background-color: #161729;
     border-radius: 5px;
     height: 50px;
+    border-color: #161729;
+   
 }
+
 
 .navItems{
     
@@ -328,5 +333,86 @@ margin-left: 10px;
     
 
 }
+
+
+/*___update hostel page with the specific id to get the the details of the hostel and modify it */
+
+
+
+
+
+/* ___________________Bookings table of hostel________________________ */
+
+.booking-page{
+    color: #e5eba5;
+    background-color: #161729;
+    position:absolute;
+    height:100%;
+    
+    width:100%;
+
+}
+.booking-page h2{
+    text-align: center;
+    margin-top: 10px;
+}
+.booking-container{
+    
+    background-color: #424655;
+    /* margin-right: 10px; */
+    /* float: left; */
+    position: relative;
+    right: 10px;
+    left: 10px;
+    border-radius: 5px;
+    margin-right:20px;
+}
+#customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    /* border-radius: 5px; */
+    /* margin-right: 10px; */
+  }
+  
+  #customers td, #customers th {
+    border-right: 1px solid rgb(67, 151, 120);
+    
+    padding: 8px;
+    /* border-bottom:1px solid rgb(67,151,120); */
+    border-radius: 5px;
+  }
+  #customers thead{
+    border-bottom: 1px solid rgb(67, 151, 120);
+  }
+  
+  #customers tr:nth-child(even){background-color: #4b6f70;}
+  
+  #customers tr:hover {background-color: rgb(16, 41, 59);}
+  
+  #customers th {
+    
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #424655;
+    color: rgb(206, 228, 148);
+    
+  }
+
+  
+  
+
+  #customers th:last-child{
+    border:none;
+    
+  }
+
+  #customers td:last-child{
+    border: none;
+  }
+
+
+
 
 
