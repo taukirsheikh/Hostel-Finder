@@ -5,15 +5,32 @@
     box-sizing: border-box;
     font-family: "Lato", sans-serif;
   }
+  body{
+    background-image: linear-gradient(to right top, #201d3d, #0b1b33, #021825, #001117, #010607);
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
 
   /* ___________________________hOMEpAGE________________________ */
   #background{
     width: auto;
     height: 400px;
-    background: #161729;
-    background-image: linear-gradient( to right,#0D324D,#7F5A83);
+    /* background: #161729; */
+    
+    background-image: linear-gradient(to right top, #17464a, #003b4c, #002e4d, #001f48, #1e0a39);
     /* position: absolute; */
+    
 }
+
+.home-nav-bar{
+  height: 65px;
+  background-image: linear-gradient( to right,#0D324D,#7F5A83);
+  position:sticky;
+
+
+}
+
 #logo{
     position: absolute;
     width: 20px;
@@ -29,43 +46,32 @@
     color: #FFFFFF;
     cursor: pointer;
 }
-.logbtn{
-    position: relative;
-    width: 105px;
+
+
+
+
+
+
+.button{
+
+    /* width: fit-content; */
+    padding: 10px;
+    width:fit-content;
     height: 34px;
-    background-color: #383179;
+    background-color: #295494;
     border: #161729;
     color: #FFFFFF;
     border-radius: 5px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    
-}
-
-#sign{
-    position:absolute;
-    right: 5px;
-    top: 5px;
-    cursor: pointer;
-}
-#login{
-    position:absolute;
-    right: 120px;
-    top: 5px;
-    cursor: pointer;
-}
-#hostelmanage-btn{
-
-    width: 105px;
-    height: 34px;
-    background-color: #383179;
-    border: #161729;
-    color: #FFFFFF;
-    border-radius: 5px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    position:absolute;
+    font-weight: bold;
+    font-size: 0.8rem;
+    /* position:absolute;
     right: 235px;
-    top: 5px;
-    cursor: pointer;
+    top: 5px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
     
 
 }
@@ -73,80 +79,283 @@
     outline-color: transparent;
     outline-style:solid;
     box-shadow: 0 0 0 2px #9088bd;
+    cursor: pointer;
 
 }
 
-#searchbyname{
-    width: 30%;
-    height: 4.5%;
-    position: absolute;
-    left: 450px;
-    right: 300px;
-    top:100px;
-    border-radius: 4px;
+
+.manage-signin{
+  margin-right: 20px;
+  float: right;
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 10px;
+  
 }
 
-/* .inputdetails-container{
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-} */
-/* #facilities{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: large;
-    position: absolute;
-    left: 10%;
-    top: 30%;
-    color: antiquewhite;
+.search-container{
+  height: 400px;
+  display: flex;
+  /* background-color: red; */
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  /* position: absolute; */
+  /* position: relative; */
 
-} */
+
+  justify-content:center;
+  align-items: center;
+  /* position: relative; */
+  
+  /* gap: 20px; */
+
+  
+}
+
+
+.searchbyname{
+    width: 21rem;
+    height: 2rem;
+    border-radius: 5px;
+} 
+
+
 .inputdetails{
-    width: 15%;
-    height: 25px;
-    position:relative;
-    left: 300px;
-    top: 150px;
-    border-radius: 4px;
+  width: fit-content;
+  height: 2rem;
+  border-radius: 5px;
    
-    
+}
+
+.hosteltype{
+  width: 5rem;
 }
 
 .checkboxfacilities{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: whitesmoke;
-    /* position: relative; */
-    margin-top: 165px;
-    margin-left: 250px;
-
-    
-
-    
+    display: flex;
+    gap: 10px;
+    /* position: relative; */ 
    
+}
+.fact-text{
+  font-weight: bold;
+  font-size: large
+
+}
+
+.fact-item{
+  display: flex;
+  gap: 4px;
+  font-size: large;
+  
+}
+
+.fact-item input{
+  width: 20px;
 }
 .search{
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     width: 120px;
     height: 35px;
-    position:relative;
-    left: 540px;
-    top: 40px;
-    color: #383179;
-    background-color: #9088bd;
-    border-color: #383179;
-    border-radius: 4px;
+    
+   
+    
     
 
     
 }
 .search:active{
     background-color: rgb(168, 180, 212);
+  
+  
     transition: 0s;
 }
 
-/* _______________________________hOSTELmANGERdASHBOARD______________________________ */
+.search-items{
+  height: 400px;
+  /* width: 400px; */
+
+  /* background-color: green; */
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  align-items: center;
+  gap:35px
+  /* justify-content: center; */
+}
+
+
+.search-button-container{
+  /* background-color: red; */
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+.location-container{
+  display: flex;
+  gap:10px;
+}
+
+
+
+/* _______________________________hostel card details______________________________ */
+
+
+
+.hostel-cards-container{
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+.hostel-cards-container h2{
+  color: wheat;
+}
+.hostel-card {
+  /* margin-left: 10px; */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s ease-in-out;
+  width: 20%;
+  border-radius: 5px;
+  opacity: 1;
+  background-color: #003b4c;
+  
+}
+.hostel-profile-image{
+  border-radius: 5px;
+  
+  width: 100%;
+}
+
+.hostel-card:hover {
+  box-shadow: 10px 8px 16px 0 rgb(27, 70, 84);
+  transform: scale(1.03);
+}
+
+.details-container {
+  padding: 2px 16px;
+  color:#ffffff;
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+  
+  
+  
+}
+
+.hostel-price-container{
+  background-color: #20263a;
+  /* margin-right: 10px; */
+  /* float: left; */
+
+  border-radius: 5px;
+  margin-right:10px;
+  /* border-bottom: red; */
+}
+
+.price-of-rooms{
+  font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    /* height: 1%; */
+
+}
+
+.price-of-rooms td, .price-of-rooms th {
+  border: 1px solid rgb(67, 151, 120);
+  border-bottom: 1px solid rgb(67, 151, 120);
+  text-align: center;
+  
+  padding: 3px;
+  
+  border-radius: 5px;
+}
+
+
+
+  
+  .price-of-rooms tr:hover {background-color: rgb(16, 41, 59);}
+  
+  .price-of-rooms th {
+    
+    
+    background-color: #1d2231;
+    color: rgb(206, 228, 148);
+   
+   
+    
+  }
+
+   
+.hostel-card-items{
+  margin-right: 20px;
+  
+  /* background-color: red; */
+
+  /* display: flex; */
+  
+  display: grid;
+  grid-template-columns:repeat(4,290px);
+  
+  gap: 20px;
+
+
+  
+}
+ 
+
+.hostel-card{
+  /* background-color: brown; */
+  
+  width: 100%;
+
+}
+
+.hostel-cards-container{
+  /* background-color: green; */
+}
+
+ 
+
+  
+  
+
+   /* .price-of-rooms th:first-child{
+    border:none;
+    
+  } 
+
+  .price-of-rooms td:first-child{
+    border: none;
+  }  */
+
+
+ 
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

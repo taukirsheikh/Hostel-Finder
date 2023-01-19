@@ -9,33 +9,40 @@ const Navbar = () => {
   };
   return (
     <>
-      <nav>
+    <header>
+
+      <nav className="home-nav-bar">
         <NavLink to="/">
           <h1 id="logo">
             <strong>SAJILO</strong> <br></br>HOSTEL
           </h1>
         </NavLink>
-        <button
-          id="sign"
-          className="logbtn button"
-        >
-          Sign Up
-        </button>
-        <button
-          id="login"
-          className="logbtn button"
-        >
-          Login
-        </button>
+        <div className="manage-signin">
+      <div>
+
         <button
           type="button"
-          id="hostelmanage-btn"
+          
           className="button"
           onClick={() => goToManagerDashboard()}
         >
           Manage Hostel
         </button>
+      </div>
+          <div>
+            
+        <button
+          id="sign"
+          className="button"
+        >
+          Sign In
+        </button>
+          </div>
+
+        </div>
       </nav>
+    </header>
+
     </>
   );
 };
