@@ -12,6 +12,8 @@ const Navbar = () => {
     <header>
 
       <nav className="home-nav-bar">
+        <div>
+          
         <NavLink to="/">
           <h1 id="logo">
             <strong>SAJILO</strong> <br></br>HOSTEL
@@ -39,6 +41,7 @@ const Navbar = () => {
         </button>
           </div>
 
+        </div>
         </div>
       </nav>
     </header>

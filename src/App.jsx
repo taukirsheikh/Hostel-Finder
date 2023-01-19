@@ -6,6 +6,9 @@ import ManagerDashboard from "./Components/ManagerUI/ManagerDashboard";
 import RegisterHostel from "./Components/ManagerUI/RegisterHostel";
 import UpdateHostel from "./Components/ManagerUI/UpdateHostel";
 import Bookings from "./Components/ManagerUI/Bookings";
+import UpdateDetailsPage from "./Components/ManagerUI/UpdateDetailsPage";
+import SingleHostelDetails from "./Components/homeComponents/SingleHostelDetails";
+
 
 const App = () => {
   return (
@@ -16,6 +19,12 @@ const App = () => {
           element={<Hostel />} // home page
           >
           </Route>
+
+          <Route
+              path="hostel-details/:hid" element={<SingleHostelDetails/>}>
+                
+              </Route>
+
           <Route
             path="/manager-dashboard"
             element={<ManagerDashboard />}
@@ -30,8 +39,13 @@ const App = () => {
 
             <Route
               path="update-hostel"
-              element={<UpdateHostel/>}
-            />
+              element={<UpdateHostel/>}>
+                
+            </Route>
+              <Route
+              path="update-hostel/:hid" element={<UpdateDetailsPage/>}>
+                
+              </Route>
             
             <Route
               path="bookings"

@@ -122,7 +122,7 @@ gap: 20px;
     background-color: #161729;
     height: auto;
     /* height: 100%; */
-    
+    background-image: linear-gradient(to bottom, #161729, #111b2c, #0d1f2e, #0a222e, #0a252e);
     width: 100%;
     
 }
@@ -293,6 +293,7 @@ gap: 10px;
 .hostel-container-bg{
     color: #f8f7bf;
     background-color: #161729;
+    background-image: linear-gradient(to bottom, #161729, #111b2c, #0d1f2e, #0a222e, #0a252e);
     position:absolute;
     height:100%;
     
@@ -302,7 +303,7 @@ gap: 10px;
 
 .hostel-list-container{
 
-
+    
 
 background-color: #424655;
 width:fit-content;
@@ -313,9 +314,12 @@ padding: 10px;
 border-radius: 5px;
 margin-left: 10px;
 
-
     
 }
+/* 
+.hostel-list-container Link{
+    background-color: red;
+} */
 
 .hostel-list-container ul{
     list-style-type: none;
@@ -323,6 +327,7 @@ margin-left: 10px;
     border:1px solid rgb(45,116,119);
     padding: 5px;
     font-weight: bold;
+
     
 
 }
@@ -337,9 +342,21 @@ margin-left: 10px;
 }
 
 
-/*___update hostel page with the specific id to get the the details of the hostel and modify it */
+/*___update hostel page with the specific id to get the the details of the hostel and modify it_________________________________________________ */
 
-
+.hostel-id-text{
+    background-color: #093958;
+    /* margin-top: 20px; */
+    position: relative;
+    top: 1.4rem;
+    width: 10rem;
+    height: 2rem;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
 
 
 
@@ -413,6 +430,8 @@ margin-left: 10px;
   #customers td:last-child{
     border: none;
   }
+
+
 
 
 

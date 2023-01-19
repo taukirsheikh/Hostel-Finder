@@ -24,9 +24,10 @@
 }
 
 .home-nav-bar{
+  
   height: 65px;
   background-image: linear-gradient( to right,#0D324D,#7F5A83);
-  position:sticky;
+  /* position: fixed; */
 
 
 }
@@ -293,7 +294,8 @@
 
    
 .hostel-card-items{
-  margin-right: 20px;
+  margin-right: 0px;
+  margin-left: 100px;
   
   /* background-color: red; */
 
@@ -302,7 +304,7 @@
   display: grid;
   grid-template-columns:repeat(4,290px);
   
-  gap: 20px;
+  gap: 30px;
 
 
   
@@ -315,6 +317,10 @@
   width: 100%;
 
 }
+
+
+
+
 
  
 
@@ -330,7 +336,17 @@
     border: none;
   }  */
 
+/* ____________________Single Hostel Details of  a Card_____________________ */
 
+.single-hostel-container{
+  height: 100vh;
+  background-image: linear-gradient(to left bottom, #2f4f64, #254456, #1b3a48, #122f3b, #0a252e);
+  background-image: linear-gradient(to right top, #200e30, #1c1434, #171937, #131d3a, #10213b);
+}
+
+.hostel-detail-items{
+  color: wheat;
+}
  
   
 
