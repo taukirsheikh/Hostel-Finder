@@ -21,7 +21,7 @@ const App = () => {
           </Route>
 
           <Route
-              path="hostel-details/:hid" element={<SingleHostelDetails/>}>
+              path="/hostel-details/:hid" element={<SingleHostelDetails/>}>
                 
               </Route>
 

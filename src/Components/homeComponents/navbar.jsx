@@ -1,11 +1,12 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 const Navbar = () => {
   const navigateTo = useNavigate();
 
   const goToManagerDashboard = () => {
-    navigateTo("manager-dashboard");
+    navigateTo("/manager-dashboard");
   };
   return (
     <>
@@ -33,17 +34,21 @@ const Navbar = () => {
       </div>
           <div>
             
-        <button
+      
+
+          <button
           id="sign"
           className="button"
         >
           Sign In
         </button>
+       
           </div>
 
         </div>
         </div>
       </nav>
+      
     </header>
 
     </>

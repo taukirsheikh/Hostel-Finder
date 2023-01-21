@@ -20,7 +20,7 @@ function HostelDetailsCard() {
                 return(
 
                     <div className="hostel-card">
-                    <img key={hElem.hid}
+                    <img key={hElem.Hid}
                       src={hElem.hpfimage}
                       alt="Avatar"
                       className="hostel-profile-image"
@@ -79,7 +79,7 @@ function HostelDetailsCard() {
                      
                     
                       <div>
-                       <Link to={`/hostel-details/${hElem.hid}`}>
+                       <Link to={`/hostel-details/${hElem.Hid}`} style={{textDecoration: 'none'}}>
                        <button
                           type="button"
                           className="button"

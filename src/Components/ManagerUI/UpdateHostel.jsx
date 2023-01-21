@@ -20,10 +20,10 @@ const handleupdateNavigation = ()=>{
         <br />
         
         
-        <div className="hostel-list-container" onClick={handleupdateNavigation}>
+        <div className="hostel-list-container" onClick={handleupdateNavigation} style={{textDecoration: 'none'}}>
           {HostelsList.map((hostelItems) => {
             return (
-              <Link  to={`${hostelItems.id}`  }  >
+              <Link  to={`${hostelItems.id}`  }  style={{textDecoration: 'none'}}>
               <div className="hostel-items" key={hostelItems.id} >
                 <div className="Id-Hname">
                   <ul   >
