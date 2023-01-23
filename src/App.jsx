@@ -8,9 +8,13 @@ import UpdateHostel from "./Components/ManagerUI/UpdateHostel";
 import Bookings from "./Components/ManagerUI/Bookings";
 import UpdateDetailsPage from "./Components/ManagerUI/UpdateDetailsPage";
 import SingleHostelDetails from "./Components/homeComponents/SingleHostelDetails";
+import ProtectedRoute from "./Components/Protected Route/ProtectedRoute";
+import { useSelector } from "react-redux";
 
 
 const App = () => {
+  const isLoggedIn = useSelector(state => state.user.isLoggedIn);
+
   return (
     <>
       <Routes>
@@ -24,6 +28,11 @@ const App = () => {
               path="/hostel-details/:hid" element={<SingleHostelDetails/>}>
                 
               </Route>
+
+
+              <Route element={<ProtectedRoute  isLoggedIn={isLoggedIn}/>}>
+
+
 
           <Route
             path="/manager-dashboard"
@@ -53,6 +62,8 @@ const App = () => {
 
             />
           </Route>
+              </Route>
+
           <Route
             path="*"
             element={<NoMatch />}

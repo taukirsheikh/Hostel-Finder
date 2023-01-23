@@ -6,7 +6,7 @@ function HostelDetailsCard() {
   return (
     <>
       <div className="hostel-cards-container">
-        <h2>Hostels</h2>
+        <h2> Featured Hostels</h2>
         
         <br />
 
@@ -19,8 +19,8 @@ function HostelDetailsCard() {
 
                 return(
 
-                    <div className="hostel-card">
-                    <img key={hElem.Hid}
+                    <div className="hostel-card" key={hElem.Hid}>
+                    <img 
                       src={hElem.hpfimage}
                       alt="Avatar"
                       className="hostel-profile-image"

@@ -1,11 +1,12 @@
 import React from 'react'
 // import './style.css'
 import { NavLink } from "react-router-dom";
+import { useSelector } from 'react-redux';
 import { Outlet } from 'react-router-dom';
 
 
-
 function ManagerNavBar() {
+  const user = useSelector(state => state.user.user);
   return (
     <><header>
       <nav>
@@ -41,7 +42,7 @@ function ManagerNavBar() {
               </span>
                 </NavLink>
             </ul>
-            <span className='userIdentity'><strong>username</strong></span>
+            <span className='userIdentity'><strong>{user.name}</strong></span>
           </div>
         
       </nav>

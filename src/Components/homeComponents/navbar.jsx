@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { Outlet } from "react-router-dom";
+import Loginout from "./Loginout";
 
 const Navbar = () => {
   const navigateTo = useNavigate();
@@ -34,14 +35,14 @@ const Navbar = () => {
       </div>
           <div>
             
-      
+      <Loginout/>
 
-          <button
+          {/* <button
           id="sign"
           className="button"
         >
           Sign In
-        </button>
+        </button> */}
        
           </div>
 
