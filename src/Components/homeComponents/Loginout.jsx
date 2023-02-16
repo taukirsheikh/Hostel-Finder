@@ -1,27 +1,21 @@
 import { useState } from "react";
 import { Suspense } from "react";
 // import {MdArrowDropDownCircle} from 'react-icons/fa'
-import ArrowDropDownCircleIcon from '@mui/icons-material/ArrowDropDownCircle';
+import ArrowDropDownCircleIcon from "@mui/icons-material/ArrowDropDownCircle";
 // import reactLogo from './assets/react.svg'
 // import "./App.css";
 import { useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
-import {login as userLogin, logout as userLogout} from '../redux/userSlice'
-
+import { login as userLogin, logout as userLogout } from "../redux/userSlice";
 
 import { useSelector } from "react-redux";
-import { useDispatch } from 'react-redux';
-
-
-
-
-
+import { useDispatch } from "react-redux";
 
 function Loginout() {
   const dispatch = useDispatch();
   const [verfiy, Setverfiy] = useState(false);
-  const user = useSelector(state => state.user.user);
-  const isLoggedIn = useSelector(state => state.user.isLoggedIn);
+  const user = useSelector((state) => state.user.user);
+  const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
 
   const handleLogout = () => {
     Setverfiy(false);
@@ -40,7 +34,21 @@ function Loginout() {
           }
         );
         Setverfiy(true);
-        dispatch(userLogin(res.data)); 
+        dispatch(userLogin(res.data));
+
+// sending user data to db
+        const userData = {
+          name: res.data.name,
+          email: res.data.email,
+          picture: res.data.picture,
+          given_name: res.data.given_name,
+          email_verified: res.data.email_verified,
+          sub: res.data.sub,
+        };
+        axios
+          .post("http://localhost:8000/api/users/", userData)
+          .then((res) => console.log(res.data))
+          .catch((error) => console.error(error));
       } catch (err) {
         console.log(err);
       }
@@ -48,51 +56,45 @@ function Loginout() {
   });
 
   return (
-    <div >
+    <div>
       {!isLoggedIn ? (
-        <button id="sign"
-        className="button" onClick={googleLogin}>Sign In</button>
+        <button
+          id="sign"
+          className="button"
+          onClick={googleLogin}
+        >
+          Sign In
+        </button>
       ) : (
         <div className=" log-dropdown">
-        
-            <div className="log-container">
+          <div className="log-container">
+            <span>
+              <img
+                className="google-profile-image"
+                src={user.picture}
+                alt=""
+              />
+            </span>
 
-           <span>
-        <img className="google-profile-image"
-        src={user.picture}
-        alt=""
-      />
-      </span> 
-
-      <span style={{ color: "wheat" }}>{user.name} <ArrowDropDownCircleIcon/></span>
-      </div>
-      <div className="log-dropdown-content" >
-
-      <p
-        onClick={handleLogout}
-        className="button"
-      >
-        Sign Out
-      </p>
-      </div>
+            <span style={{ color: "wheat" }}>
+              {user.name} <ArrowDropDownCircleIcon />
+            </span>
+          </div>
+          <div className="log-dropdown-content">
+            <p
+              onClick={handleLogout}
+              className="button"
+            >
+              Sign Out
+            </p>
+          </div>
+        </div>
+      )}
     </div>
-  )}
-
- 
-</div>
-);
+  );
 }
 
 export default Loginout;
-
-
-
-
-
-
-
-
-
 
 // function Loginout() {
 //   const [detial, setDetail] = useState([]);
@@ -137,7 +139,7 @@ export default Loginout;
 //               src={e.picture}
 //               alt=""
 //             />
-//             </span> 
+//             </span>
 
 //             <span style={{ color: "wheat" }}>{e.name} </span>
 //             <span><ArrowDropDownCircleIcon/></span>
@@ -157,7 +159,6 @@ export default Loginout;
 //         ))
 //       )}
 
-     
 //     </div>
 //   );
 // }
