@@ -44,3 +44,15 @@ class HostelSerializer(serializers.ModelSerializer):
             validated_data['image_3'] = uploaded_image_3['secure_url']
 
         return Hostel.objects.create(**validated_data)
+    
+
+
+class UpdateHostelListSeriliazer(serializers.ModelSerializer):
+    class CustomHostelManagerSerializer(serializers.ModelSerializer):
+        class Meta:
+            model=Hostel
+            fields=['user_id','email']
+    manager_id=CustomHostelManagerSerializer
+    class Meta:
+        model=Hostel
+        fields=['manager_id','hostel_id',"hostel_name"]
