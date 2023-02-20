@@ -21,7 +21,7 @@ class Hostel(models.Model):
         ('Boys',"Boys"),
         ('Girls',"Girls")
     )
-    hostel_type = models.CharField(max_length=10 , choices=type)
+    hostel_type = models.CharField(max_length=10 , choices=type, null=True)
     pan_no=models.CharField(max_length=200, null=True, blank=True)
     district=models.CharField(max_length=100,null=True, blank=True)
     place=models.CharField(max_length=100,null=True, blank=True)
@@ -51,7 +51,11 @@ class Hostel(models.Model):
     # ----------------------------
     map_link=models.URLField(null=True, blank=True)
 
+    def __int__(self):
+        return self.hostel_id
+
    
 
     def __str__(self):
-        return self.hostel_name+' '+self.hostel_type
+        # return self.hostel_name+' '+self.hostel_type
+        return f"{self.hostel_id} - {self.hostel_name}"

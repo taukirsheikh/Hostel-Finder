@@ -1,6 +1,6 @@
 from rest_framework import generics
 from api.models import Hostel,User
-from api.serializers import HostelSerializer,UpdateHostelListSeriliazer
+from api.serializers import HostelSerializer,UpdateHostelListSeriliazer, SingleHostelUpdateSeriliazer
 
 class HostelList(generics.ListCreateAPIView):
     queryset=Hostel.objects.all()
@@ -20,5 +20,8 @@ class UpdateHostelList(generics.ListAPIView):
                 user = User.objects.get(email=identifier)
             return user.hostel.all() #related name used here
         return Hostel.objects.all()
-
-
+     
+class SingleHostelUpdate(generics.RetrieveUpdateDestroyAPIView):
+    queryset=Hostel.objects.all()
+    serializer_class=SingleHostelUpdateSeriliazer
+    # lookup_field='hostel_id'

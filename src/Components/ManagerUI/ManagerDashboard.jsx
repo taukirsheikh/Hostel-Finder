@@ -10,6 +10,7 @@ import "./style.css";
 function ManagerDashboard() {
   const email = useSelector((state) => state.user.user.email);
   const dispatch = useDispatch();
+  let eid;
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -17,6 +18,7 @@ function ManagerDashboard() {
           `http://127.0.0.1:8000/api/users/${email}/`
         );
         console.log(response.data);
+    
         dispatch(managerDetail(response.data));
       } catch (error) {
         console.error(error);
@@ -27,7 +29,7 @@ function ManagerDashboard() {
 
   return (
     <>
-      <ManagerNavBar />
+      <ManagerNavBar/>
     </>
   );
 }
