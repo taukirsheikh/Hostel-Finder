@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from api.models import User, Hostel
+from api.models import User, Hostel, Booking
 from rest_framework import exceptions
 import cloudinary.uploader
 
@@ -91,3 +91,22 @@ class SingleHostelUpdateSeriliazer(serializers.ModelSerializer):
         instance = super().update(instance, validated_data)
         return instance
     
+
+class BookingSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Booking
+        fields="__all__"
+
+
+
+
+
+
+class ManagerBookingSerializer(serializers.ModelSerializer):
+    
+    hostel = serializers.CharField(source='hostel.hostel_name')
+
+    class Meta:
+        model = Booking
+        fields = ['hostel_manager','booking_id', 'hostel', 'booker_id',  'booker_name','seater', 'contact', 'booking_date']
+

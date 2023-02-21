@@ -58,4 +58,24 @@ class Hostel(models.Model):
 
     def __str__(self):
         # return self.hostel_name+' '+self.hostel_type
-        return f"{self.hostel_id} - {self.hostel_name}"
+        return f"{self.hostel_id} - {self.hostel_name}-{self.manager_id}"
+
+
+class Booking(models.Model):
+    booking_id=models.BigAutoField(primary_key=True)
+    hostel=models.ForeignKey(Hostel, on_delete=models.CASCADE, related_name='booked_hostel', verbose_name='hostel_to_book')
+    booker_id=models.ForeignKey(User, on_delete=models.CASCADE, related_name='booker_user', verbose_name='booked_by')
+    hostel_manager=models.ForeignKey(User, on_delete=models.CASCADE, related_name='booking',verbose_name='hostel_owner')
+    booker_name=models.CharField(max_length=200, null=True, blank=True,verbose_name='customer_name')
+    contact=models.CharField(max_length=200, null=True, blank=True)
+    Seater=(
+        (1,"Single Seater"),
+        (2,"Two Seater"),
+        (3,"Three Seater"),
+        (4,"Four Seater"),
+    )
+    seater=models.IntegerField(choices=Seater)
+    booking_date=models.DateField(auto_now=True )
+
+    class Meta:
+        ordering = ('-booking_date',)

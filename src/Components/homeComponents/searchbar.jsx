@@ -102,7 +102,7 @@ const Searchbar = () => {
                 type="checkbox"
                 id="fan"
               />
-              <label htmlFor="fan">Laundry</label>
+              <label htmlFor="fan">Closet</label>
               </div>
               <div className="fact-item">
 
