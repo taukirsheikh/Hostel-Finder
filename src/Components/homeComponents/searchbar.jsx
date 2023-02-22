@@ -55,7 +55,7 @@ const Searchbar = () => {
               />
               <label htmlFor="parking">Parking &nbsp;</label>
               </div>
-              <div className="fact-item">
+              {/* <div className="fact-item">
 
 
               <input
@@ -63,7 +63,7 @@ const Searchbar = () => {
                 id="gym"
               />
               <label htmlFor="gym">Gym &nbsp;</label>
-              </div>
+              </div> */}
               <div className="fact-item">
                 
               <input
