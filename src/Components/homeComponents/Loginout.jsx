@@ -58,13 +58,13 @@ function Loginout() {
   return (
     <div>
       {!isLoggedIn ? (
-        <button
+        <span
           id="sign"
           className="button"
           onClick={googleLogin}
         >
           Sign In
-        </button>
+        </span>
       ) : (
         <div className=" log-dropdown">
           <div className="log-container">

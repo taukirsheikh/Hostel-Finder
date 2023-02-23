@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'cloudinary',
 
 ]
-# CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_ALLOW_ALL = True
 # CORS_ORIGIN_WHITELIST = [    'http://localhost:5137',]
 ALLOWED_HOSTS = ['*']
 

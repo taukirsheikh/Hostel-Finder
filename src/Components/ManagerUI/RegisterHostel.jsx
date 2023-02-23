@@ -154,7 +154,9 @@ function RegisterHostel() {
                   className="forminputfield_1"
                   type="text"
                   name="district"
+                  onChange={handleChange}
                   id="district"
+
                 ></input>
               </div>
               <div>
@@ -163,8 +165,8 @@ function RegisterHostel() {
                 <input
                   className="forminputfield_1"
                   type="text"
-                  name="place"
                   id="place"
+                  name="place"
                   onChange={handleChange}
                 ></input>
               </div>
