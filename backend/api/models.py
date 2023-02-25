@@ -14,8 +14,8 @@ class User (models.Model):
         return self.name +' '+ self.email
 
 class Hostel(models.Model):
-    manager_id=models.ForeignKey(User, on_delete=models.CASCADE, related_name='hostel') #hostel.managerid
     hostel_id=models.BigAutoField(primary_key=True)
+    manager_id=models.ForeignKey(User, on_delete=models.CASCADE, related_name='hostel') #hostel.managerid
     hostel_name=models.CharField(max_length=200, null=True, blank=True)
     type=(
         ('Boys',"Boys"),

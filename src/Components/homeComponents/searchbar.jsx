@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const Searchbar = () => {
   const [price, setPrice] = useState(0);
@@ -118,10 +119,20 @@ const Searchbar = () => {
     });
   };
 
-  const handleSearch = (e) => {
+  const handleSearch = async (e) => {
     e.preventDefault();
     // Send search details to backend
+
     console.log(searchDetail);
+    try{
+      const resp= await axios.get('http://127.0.0.1:8000/api/search-hostel', {params:searchDetail})
+      .then((resp)=>{
+        console.log(resp.data)
+      })
+
+    }catch(error){
+      console.log(error)
+    }
   };
   return (
     <>

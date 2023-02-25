@@ -110,3 +110,7 @@ class ManagerBookingSerializer(serializers.ModelSerializer):
         model = Booking
         fields = ['hostel_manager','booking_id', 'hostel', 'booker_id',  'booker_name','seater', 'contact', 'booking_date']
 
+class SearchSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Hostel
+        fields='__all__'
