@@ -1,0 +1,43 @@
+@import url(https://fonts.googleapis.com/css?family=Gilda+Display);
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,400;0,500;0,600;0,900;1,700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+  }
+  body{
+    background-image: linear-gradient(to right top, #201d3d, #0b1b33, #021825, #001117, #010607);
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+/* used in manage hostel and sign in */
+.button{
+    padding: 10px;
+    background-color: #295494;
+    border-style: none;
+    color: #FFFFFF;
+    border-radius: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.button:hover {
+    outline-color: transparent;
+    outline-style:solid;
+    box-shadow: 0 0 0 2px #9088bd;
+    cursor: pointer;
+}
+
+/* 404 Page CSS Styles */
+
+.body {
+    
+    background: radial-gradient(#000, #111);
+    color: white;
+    overflow: hidden;
+    height: 100%;
+    user-select: none;
+  }
