@@ -4,13 +4,13 @@ from api.views.hostelManageView import HostelList, UpdateHostelList, SingleHoste
 from api.views.bookingView import BookingList, BookedHostel
 from api.views.searchView import SearchHostel
 from django.views.generic import RedirectView
+from api.tests import get_recommendations
 
 
 
 
 urlpatterns = [
     path('favicon.ico', RedirectView.as_view(url='/static/images/favicon.ico', permanent=True)),
-
      path('api/users/', UserList.as_view(), name='hostelusers-list'),
      path('api/users/<str:email>/', UserDetailByEmail.as_view(), name='manager-detail'),
      path('api/register-hostel/', HostelList.as_view(), name='hostel-list'),
@@ -18,5 +18,6 @@ urlpatterns = [
      path('api/update-single-hostel/<int:pk>/', SingleHostelUpdate.as_view(), name='single_hostel_update_by_manager'),
      path('api/bookings/', BookingList.as_view(), name='all bookings'),
      path('api/bookings/<int:hostel_manager>/', BookedHostel.as_view(), name='list of booking in hostel of manager'),
-     path("api/search-hostel/", SearchHostel.as_view(), name="search hostel from home page")
+     path("api/search-hostel/", SearchHostel.as_view(), name="search hostel from home page"),
+     path('api/recommendations/', get_recommendations, name='get_recommendations'),
 ]

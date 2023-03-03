@@ -46,7 +46,6 @@ class HostelSerializer(serializers.ModelSerializer):
         return Hostel.objects.create(**validated_data)
     
 
-
 class UpdateHostelListSeriliazer(serializers.ModelSerializer):
     class CustomHostelManagerSerializer(serializers.ModelSerializer):
         class Meta:
@@ -73,7 +72,6 @@ class SingleHostelUpdateSeriliazer(serializers.ModelSerializer):
         representation['image_2'] = instance.image_2
         representation['image_3'] = instance.image_3
         return representation
-
     
     def update(self, instance, validated_data):
         image_1 = validated_data.get('image_1',None)
@@ -90,17 +88,11 @@ class SingleHostelUpdateSeriliazer(serializers.ModelSerializer):
             validated_data['image_3'] = uploaded_image_3['secure_url']
         instance = super().update(instance, validated_data)
         return instance
-    
 
 class BookingSerializer(serializers.ModelSerializer):
     class Meta:
         model=Booking
         fields="__all__"
-
-
-
-
-
 
 class ManagerBookingSerializer(serializers.ModelSerializer):
     
@@ -114,3 +106,4 @@ class SearchSerializer(serializers.ModelSerializer):
     class Meta:
         model=Hostel
         fields='__all__'
+        read_only_fields=('manager_id','pan_no','manager_name', 'manager_contact','admission_fee', 'description', 'image_1', 'image_2', 'image_3','balcony', 'map_link')
