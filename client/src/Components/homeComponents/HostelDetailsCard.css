@@ -1,0 +1,78 @@
+
+.hostel-cards-container h2 {
+    padding: 10px;
+    color: wheat;
+    text-align: center;
+}
+
+.hostel-card--items {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 6.5%;
+    padding-right: 5.5%;
+    display: grid;
+    grid-template-columns: repeat(4, 360px);
+    gap: 30px 30px;
+}
+
+.hostel-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s ease-in-out;
+    border-radius: 5px;
+    opacity: 1;
+    background-color: #003b4c;
+}
+.hostel-profile-image {
+    margin: 10px; 
+    margin-left: 15px;
+    width: 330px;
+    height: 250px;
+    border-radius: 5px;
+}
+
+.hostel-card:hover {
+    box-shadow: 10px 8px 16px 0 rgb(27, 70, 84);
+    transform: scale(1.03);
+}
+
+.details-container {
+    padding: 2px 16px;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.hostel-price-container {
+    background-color: #20263a;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.price-of-rooms {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.price-of-rooms td,
+.price-of-rooms th {
+    border: 1px solid rgb(67, 151, 120);
+    border-bottom: 1px solid rgb(67, 151, 120);
+    text-align: center;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.price-of-rooms tr:hover {
+    background-color: rgb(16, 41, 59);
+}
+
+.price-of-rooms th {
+    background-color: #1d2231;
+    color: rgb(206, 228, 148);
+}
+
+.btn-view--details {
+    text-align: center;
+}
