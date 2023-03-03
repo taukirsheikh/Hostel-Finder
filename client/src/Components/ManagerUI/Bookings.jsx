@@ -30,7 +30,7 @@ function Bookings() {
             </thead>
             <tbody>
               {!bookings ? (
-                <div>Hostel Bookings Will Appear Here</div>
+                <h1>Hostel Bookings Will Appear Here</h1>
               ) : (
                 bookings.map((booking, index) => (
                   <tr key={booking.booking_id}>
