@@ -1,11 +1,18 @@
 from rest_framework import generics
 from api.models import Hostel,User
 from api.serializers import HostelSerializer,UpdateHostelListSeriliazer, SingleHostelUpdateSeriliazer
+from sklearn.feature_extraction.text import TfidfVectorizer
+from django.conf import settings
 
+#hostel register
 class HostelList(generics.ListCreateAPIView):
     queryset=Hostel.objects.all()
     serializer_class=HostelSerializer
-    # lookup_field='hostel_id'
+    
+
+        
+
+    
    
 
 class UpdateHostelList(generics.ListAPIView):

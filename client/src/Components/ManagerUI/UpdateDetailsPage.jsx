@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 function UpdateDetailsPage() {
-  const [hostelData, setHostelData] = useState();
+  const [hostelData, setHostelData] = useState([]);
   const { hid } = useParams();
   console.log(hid + " is id from single hostel update");
   useEffect(() => {
@@ -146,7 +146,7 @@ function UpdateDetailsPage() {
         }
       );
       //  const response= await axios.post("https://12548895-2c90-482a-a57a-42f46b4aed44.mock.pstmn.io/hostel",hostelUpdate);
-      console.log(response.data);
+      console.log(response.data,'success');
     } catch (error) {
       console.log(error);
     }

@@ -64,9 +64,13 @@ class Hostel(models.Model):
 class Booking(models.Model):
     booking_id=models.BigAutoField(primary_key=True)
     hostel=models.ForeignKey(Hostel, on_delete=models.CASCADE, related_name='booked_hostel', verbose_name='hostel_to_book')
+
     booker_id=models.ForeignKey(User, on_delete=models.CASCADE, related_name='booker_user', verbose_name='booked_by')
+
     hostel_manager=models.ForeignKey(User, on_delete=models.CASCADE, related_name='booking',verbose_name='hostel_owner')
+
     booker_name=models.CharField(max_length=200, null=True, blank=True,verbose_name='customer_name')
+    
     contact=models.CharField(max_length=200, null=True, blank=True)
     Seater=(
         (1,"Single Seater"),

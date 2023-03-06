@@ -3,7 +3,9 @@ from api.views.userView import UserList, UserDetailByEmail
 from api.views.hostelManageView import HostelList, UpdateHostelList, SingleHostelUpdate
 from api.views.bookingView import BookingList, BookedHostel
 from api.views.searchView import SearchHostel
+from api.views.singleHostelView import SingleHostelView
 from django.views.generic import RedirectView
+
 from api.tests import get_recommendations
 
 
@@ -20,4 +22,5 @@ urlpatterns = [
      path('api/bookings/<int:hostel_manager>/', BookedHostel.as_view(), name='list of booking in hostel of manager'),
      path("api/search-hostel/", SearchHostel.as_view(), name="search hostel from home page"),
      path('api/recommendations/', get_recommendations, name='get_recommendations'),
+     path('api/single-hostel/<int:pk>/', SingleHostelView.as_view(), name="view_single_hostel_after_search")
 ]

@@ -107,3 +107,9 @@ class SearchSerializer(serializers.ModelSerializer):
         model=Hostel
         fields='__all__'
         read_only_fields=('manager_id','pan_no','manager_name', 'manager_contact','admission_fee', 'description', 'image_1', 'image_2', 'image_3','balcony', 'map_link')
+
+
+class SingleHostelSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Hostel
+        fields="__all__"

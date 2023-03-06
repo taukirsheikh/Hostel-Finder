@@ -13,7 +13,7 @@ const Navbar = () => {
     <>
       <nav className="home-nav-bar">
         <NavLink to="/">
-          <h1>SAJILO HOSTEL FINDER</h1>
+          <h1>SAJILO HOSTEL </h1>
         </NavLink>
         <div className="manage-signin">
           <button

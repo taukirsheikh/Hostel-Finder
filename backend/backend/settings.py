@@ -152,3 +152,6 @@ cloudinary.config(
     api_key="157134356666242",
     api_secret="26k3TYz-jFnXBGrXEllx-9WPyek"
 )
+
+
+global FEATURE_MATRIX

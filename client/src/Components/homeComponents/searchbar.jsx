@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { searchHostel as getHostel } from "../redux/searchSlice";
+import { useSelector } from "react-redux";
 import axios from "axios";
 import "./Searchbar.css";
 
 const Searchbar = () => {
+  const searchedHostel= useSelector((state)=>state.search.hostelList)
+  const dispatch=useDispatch();
   const [price, setPrice] = useState(0);
   const [selectedSeater, setSelectedSeater] = useState("");
   const [seaterPrice, setSeaterPrice] = useState(0);
@@ -121,6 +126,8 @@ const Searchbar = () => {
       const resp= await axios.post('http://127.0.0.1:8000/api/search-hostel/',searchDetail)
       .then((resp)=>{
         console.log(resp.data)
+        dispatch(getHostel(resp.data))
+        console.table(searchedHostel)
       })
 
     }catch(error){
