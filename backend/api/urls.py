@@ -1,7 +1,7 @@
 from django.urls import path
 from api.views.userView import UserList, UserDetailByEmail
 from api.views.hostelManageView import HostelList, UpdateHostelList, SingleHostelUpdate
-from api.views.bookingView import BookingList, BookedHostel
+from api.views.bookingView import BookingList, BookedHostel, UserBooking
 from api.views.searchView import SearchHostel
 from api.views.singleHostelView import SingleHostelView
 from django.views.generic import RedirectView
@@ -20,6 +20,7 @@ urlpatterns = [
      path('api/update-single-hostel/<int:pk>/', SingleHostelUpdate.as_view(), name='single_hostel_update_by_manager'),
      path('api/bookings/', BookingList.as_view(), name='all bookings'),
      path('api/bookings/<int:hostel_manager>/', BookedHostel.as_view(), name='list of booking in hostel of manager'),
+     path('api/user-bookings/<str:booker_id>/', UserBooking.as_view(), name='User bookings'),
      path("api/search-hostel/", SearchHostel.as_view(), name="search hostel from home page"),
      path('api/recommendations/', get_recommendations, name='get_recommendations'),
      path('api/single-hostel/<int:pk>/', SingleHostelView.as_view(), name="view_single_hostel_after_search")

@@ -3,7 +3,8 @@ import { Suspense } from "react";
 import ArrowDropDownCircleIcon from "@mui/icons-material/ArrowDropDownCircle";
 import { useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
-import { login as userLogin, logout as userLogout } from "../redux/userSlice";
+import { login as userLogin, logout as userLogout, fetchDetail as getuserdetail } from "../redux/userSlice";
+import { Link } from "react-router-dom";
 
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
@@ -44,7 +45,13 @@ function Loginout() {
         };
         axios
           .post("http://localhost:8000/api/users/", userData)
-          .then((res) => console.log(res.data))
+          .then((res) =>{
+
+            console.log(res.data)
+            dispatch(getuserdetail(res.data))
+            
+          } )
+          // .then((resp)=>console.log(resp.data,'i am a then detail'))
           .catch((error) => console.error(error));
       } catch (err) {
         console.log(err);
@@ -56,7 +63,7 @@ function Loginout() {
     <div>
       {!isLoggedIn ? (
         <span id="sign" className="button" onClick={googleLogin}>
-          Sign In
+          Sign In / Sing Up
         </span>
       ) : (
         <div className=" log-dropdown">
@@ -66,11 +73,15 @@ function Loginout() {
             <span className="user-name" style={{ color: "wheat" }}>
               {user.name} <ArrowDropDownCircleIcon />
             </span>
-          </div>
           <div className="log-dropdown-content">
-            <p onClick={handleLogout} className="button">
-              Sign Out
-            </p>
+            <ul>
+             <Link to="/user-bookings" style={{ textDecoration: 'none' }} className="Links">
+             <li >Your Bookings </li>
+             </Link> 
+              <li  onClick={handleLogout}> Sing Out</li>
+            </ul>
+            
+          </div>
           </div>
         </div>
       )}

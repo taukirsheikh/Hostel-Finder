@@ -97,10 +97,26 @@ class BookingSerializer(serializers.ModelSerializer):
 class ManagerBookingSerializer(serializers.ModelSerializer):
     
     hostel = serializers.CharField(source='hostel.hostel_name')
-
+ 
     class Meta:
         model = Booking
         fields = ['hostel_manager','booking_id', 'hostel', 'booker_id',  'booker_name','seater', 'contact', 'booking_date']
+
+class UserBookingSerializer(serializers.ModelSerializer):
+    
+    # hostel = serializers.CharField(source='hostel.hostel_name')
+    class CustomHostelBook(serializers.ModelSerializer):
+        class Meta:
+            model=Hostel
+            fields=['manager_name','manager_contact','hostel_name']
+
+    hostel=CustomHostelBook()
+
+    
+
+    class Meta:
+        model = Booking
+        fields = "__all__"
 
 class SearchSerializer(serializers.ModelSerializer):
     class Meta:

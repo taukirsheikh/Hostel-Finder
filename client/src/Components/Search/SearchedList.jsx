@@ -1,19 +1,21 @@
 import React from "react";
 // import hostelCard from "../../assets/hostelCard";
 import { Link } from "react-router-dom";
-import "./HostelDetailsCard.css";
-import SearchedHostelList from "../../assets/DbHostelList"
+import "./../homeComponents/HostelDetailsCard.css";
+// import SearchedHostelList from "../../assets/DbHostelList"
 
-// import { useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 function HostelDetailsCard() {
-  // const searchHostelList= useSelector((state)=>state.search.hostelList)
+  const searchHostelList= useSelector((state)=>state.search.hostelList)
   return (
     <>
       <div className="hostel-cards-container">
-        <h2> Featured Hostels</h2>
+        {searchHostelList.length>1 ? <h2>Searched Hostel</h2>:(<h2>Your Search Hostel Will Appear Here</h2>)}
+        {console.log(searchHostelList.length,"hi")}
+        {/* <h2> Featured Hostels</h2> */}
         <div className="hostel-card--items">
-          {SearchedHostelList.map((hElem) => {
+          {searchHostelList.map((hElem) => {
             return (
               <div className="hostel-card" key={hElem.hostel_id}>
                 <img
@@ -32,37 +34,38 @@ function HostelDetailsCard() {
                   {/* ============= Start of Room Prices ============ */}
                   
                     
-                      <div>
-                        <p>Room Price</p>
-                        <div className="hostel-price-container">
-                          <table className="price-of-rooms">
-                            <thead>
-                              <tr>
-                                <th>1 Seater</th>
-                                <td>{hElem.single_seater}</td>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <th>2 Seater</th>
-                                <td>{hElem.two_seater}</td>
-                              </tr>
-                              <tr>
-                                <th>3 Seater</th>
-                                <td> {hElem.three_seater}</td>
-                              </tr>
-                              <tr>
-                                <th>4 Seater</th>
-                                <td>{hElem.four_seater}</td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                      </div>
+                  <div>
+  <p>Room Price</p>
+  <div className="hostel-price-container">
+    <table className="price-of-rooms">
+      <thead>
+        <tr>
+          <th>1 Seater</th>
+          <td>{hElem.single_seater === 0 ? "N/A" : hElem.single_seater}</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>2 Seater</th>
+          <td>{hElem.two_seater === 0 ? "N/A" : hElem.two_seater}</td>
+        </tr>
+        <tr>
+          <th>3 Seater</th>
+          <td>{hElem.three_seater === 0 ? "N/A" : hElem.three_seater}</td>
+        </tr>
+        <tr>
+          <th>4 Seater</th>
+          <td>{hElem.four_seater === 0 ? "N/A" : hElem.four_seater}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
                    
                   <div className="btn-view--details">
                     <Link
-                      to={`/hostel-details/${hElem.hostel_id}`}
+                      to={`/hostel-detail/${hElem.hostel_id}`}
                       style={{ textDecoration: "none" }}
                     >
                       <button type="button" className="button">

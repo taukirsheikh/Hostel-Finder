@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./navbar";
 import { useParams } from "react-router-dom";
 import hostelCard from "../../assets/hostelCard";
+import SearchedHostelList from "../../assets/DbHostelList"
 import "../style.css";
 import RssFeedIcon from "@mui/icons-material/RssFeed";
 import NatureIcon from "@mui/icons-material/Nature";
@@ -14,23 +15,44 @@ import LocalLaundryServiceIcon from "@mui/icons-material/LocalLaundryService";
 import BalconyIcon from "@mui/icons-material/Balcony";
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
 import "./SingleHostelDetails.css";
+import { FaWifi, FaHotTub, FaTshirt, FaParking, FaVideo, FaFan, FaWindowMaximize } from 'react-icons/fa';
+import {BiCctv} from "react-icons/bi"
+import {MdBalcony} from "react-icons/md"
+
 function SingleHostelDetails() {
   const { hid } = useParams(); // hid is the dynamic route we used in routes
   console.log(hid);
 
-  const singleHostel = hostelCard.find((hcard) => hcard.Hid === parseInt(hid));
+  const singleHostel = SearchedHostelList.find((hcard) => hcard.hostel_id === parseInt(hid));
   console.log(singleHostel);
   // const {}=singleHostel
   const {
-    Hid,
-    hname,
-    hlocation,
-    hmanagerName,
-    hcontact,
-    hdescription,
-    hfacilities,
-    hpfimage,
-    hprices,
+    hostel_id,
+    image_1,
+    image_2,
+    image_3,
+    hostel_name,
+    hostel_type,
+    district,
+    place,
+    manager_name,
+    manager_contact,
+    single_seater,
+    two_seater,
+    three_seater,
+    four_seater,
+    admission_fee,
+    description,
+    wifi,
+    closet,
+    hot_water,
+    laundry,
+    parking,
+    cctv,
+    fan,
+    balcony,
+    map_link,
+    manager_id,
   } = singleHostel;
 
   return (
@@ -40,146 +62,80 @@ function SingleHostelDetails() {
 
         <div className="hostel-detail-items">
           <div>
-            <img src={hpfimage} alt="" />
+            <img src={image_1 || "https://media.istockphoto.com/id/1166153578/de/vektor/vektor-cartoon-studenten-schlafsaal-raum-innen.jpg?s=612x612&w=0&k=20&c=hUVYv9cvL40_ywb89_ms__HBatti4JmbRsKKlSy8bPY="}
+                  alt="Avatar" />
           </div>
           <div>
             <b>Hostel Name :</b>
-            <span>{hname}</span>
+            <span>{hostel_name}</span>
           </div>
           <div>
             <b>Location :</b>
-            <span>{hlocation}</span>
+            <span>{place}, {district}</span>
           </div>
           <div>
-            Warden Name :<span>{hmanagerName}</span>
+            Hostel Manager: <span>{manager_name}</span>
           </div>
           <div>
             <b>Contact :</b>
-            <span>{hcontact}</span>
+            <span>{manager_contact}</span>
           </div>
           <div>
             <strong>Price of Rooms :</strong>
             <div>
               <br />
-              {hprices.map((money) => {
-                return (
+              
                   <div>
                     {/* <h>{money.oneSeater} {money.twoSeater}</h> */}
                     <table className="price-of-rooms money-rooms">
                       <thead>
                         <tr>
                           <th>1 Seater</th>
-                          <td>{money.oneSeater}</td>
+                          <td>{single_seater}</td>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
                           <th>2 Seater</th>
-                          <td>{money.twoSeater}</td>
+                          <td>{two_seater}</td>
                         </tr>
                         <tr>
                           <th>3 Seater</th>
-                          <td> {money.threeSeater}</td>
+                          <td> {three_seater}</td>
                         </tr>
                         <tr>
                           <th>4 Seater</th>
 
-                          <td>{money.fourSeater}</td>
+                          <td>{four_seater}</td>
                         </tr>
                         <tr>
                           <th>Admission Fee:</th>
 
-                          <td>{money.admissionFee}</td>
+                          <td>{admission_fee}</td>
                         </tr>
                       </tbody>
                     </table>
                   </div>
-                );
-              })}
+               
             </div>
           </div>
           <div></div>
-          <div>
+          <div >
             <strong> Facilities:</strong>
             <div>
-              {hfacilities.map((facility) => {
-                return (
-                  <div className="facilities-hostel">
-                    {facility.wifi ? (
-                      <span className="fact-item">
-                        <RssFeedIcon />
-                        Wifi
-                      </span>
-                    ) : (
-                      <p>No Wifi</p>
-                    )}
-                    {facility.parking ? (
-                      <span>
-                        <NatureIcon />
-                        Parking
-                      </span>
-                    ) : (
-                      <span></span>
-                    )}
-                    {facility.locker ? (
-                      <span>
-                        <DevicesFoldIcon />
-                        Locker
-                      </span>
-                    ) : (
-                      <span></span>
-                    )}
-                    {facility.hotwater ? (
-                      <span>
-                        <HotTubIcon />
-                        24/7 Hot & Cold Water
-                      </span>
-                    ) : (
-                      <span></span>
-                    )}
-                    {facility.cctv ? (
-                      <span>
-                        <CameraOutdoorIcon />
-                        CCTV
-                      </span>
-                    ) : (
-                      <span></span>
-                    )}
-                    {facility.fan ? (
-                      <span>
-                        <CycloneIcon />
-                        Fan
-                      </span>
-                    ) : (
-                      <span></span>
-                    )}
-                    {facility.laundry ? (
-                      <span>
-                        <LocalLaundryServiceIcon />
-                        Laundry
-                      </span>
-                    ) : (
-                      <span></span>
-                    )}
-                    {facility.balcony ? (
-                      <span>
-                        <BalconyIcon />
-                        Balcony
-                      </span>
-                    ) : (
-                      <span></span>
-                    )}
-                    {facility.gym ? (
-                      <span>
-                        <FitnessCenterIcon />
-                        Gym
-                      </span>
-                    ) : (
-                      <span></span>
-                    )}
-                  </div>
-                );
-              })}
+           <div className="facilities-hostel">
+
+            {wifi ? <span className="fact-item" ><FaWifi size="2rem" /> Wifi</span> : null}
+            {/* {closet ? <p><FaCloset /> Closet</p> : null} */}
+            {hot_water ? <span><FaHotTub size="2rem" /> Hot Water</span> : null}
+            {laundry ? <span><FaTshirt size="2rem" /> Laundry</span> : null}
+            {parking ? <span><FaParking size="2rem" /> Parking</span> : null}
+            {cctv ? <span><BiCctv size="2rem" /> CCTV</span> : null}
+            {fan ? <span><FaFan size="2rem"/> Fan</span> : null}
+            {balcony ? <span><MdBalcony size="2rem"/> Balcony</span> : null}
+          
+              </div>
+                     
             </div>
           </div>
 
@@ -187,7 +143,7 @@ function SingleHostelDetails() {
             <b>Description :</b>
 
             <p>
-              {hdescription} Lorem ipsum dolor, sit amet consectetur adipisicing
+              Lorem ipsum dolor, sit amet consectetur adipisicing
               elit. Sunt dolores eveniet saepe harum similique inventore
               excepturi, assumenda rerum omnis labore quam ex commodi, soluta
               hic, aliquam obcaecati debitis odio quasi!
@@ -196,7 +152,7 @@ function SingleHostelDetails() {
         </div>
       </div>
     </>
-  );
+  )
 }
 
 export default SingleHostelDetails;

@@ -10,6 +10,7 @@
     height: 220px;
     display: flex;
     flex-direction: column;
+    /* flex-wrap: wrap; */
     margin-top: 20px;
     align-items: center;
 }
@@ -17,12 +18,12 @@
 /* Ends Input Field */
 .searchbyname {
     margin-bottom: 20px;
-    width: 30rem;
-    height: 2.5rem;
+    width: 25rem;
+    height: 2rem;
     font-size: 15px;
     font-weight: 600;
     text-align: center;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     border-style: none;
     border-radius: 50px;
 }
@@ -43,9 +44,10 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: whitesmoke;
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
 }
-
+/* facilities */
 .fact-text {
     font-weight: bold;
     font-size: large
@@ -53,6 +55,7 @@
 
 .fact-item {
     display: flex;
+    
     gap: 4px;
     font-size: large;
 

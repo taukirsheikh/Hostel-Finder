@@ -65,7 +65,7 @@ class Booking(models.Model):
     booking_id=models.BigAutoField(primary_key=True)
     hostel=models.ForeignKey(Hostel, on_delete=models.CASCADE, related_name='booked_hostel', verbose_name='hostel_to_book')
 
-    booker_id=models.ForeignKey(User, on_delete=models.CASCADE, related_name='booker_user', verbose_name='booked_by')
+    booker_id=models.ForeignKey(User, on_delete=models.CASCADE, related_name='booker_user', verbose_name='booked_by' ,null=True, blank=True)
 
     hostel_manager=models.ForeignKey(User, on_delete=models.CASCADE, related_name='booking',verbose_name='hostel_owner')
 
@@ -79,6 +79,7 @@ class Booking(models.Model):
         (4,"Four Seater"),
     )
     seater=models.IntegerField(choices=Seater)
+    # bookers_email=models.EmailField(default="mohammedtaukirsheikh@gmail.com",null=True,blank=True)
     booking_date=models.DateField(auto_now=True )
 
     class Meta:

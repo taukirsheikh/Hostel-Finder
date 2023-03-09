@@ -4,7 +4,7 @@ const userSlice = createSlice({
   initialState: {
     user: null,
     isLoggedIn: false,
-    userDetail: null,
+    userDetail: [],
     hostelBookings: null,
     // console.log(user)
   },
@@ -16,7 +16,7 @@ const userSlice = createSlice({
     },
     logout: (state) => {
       state.user = null;
-      state.userDetail = null;
+      state.userDetail = [];
       state.hostelBookings = null;
       state.isLoggedIn = false;
     },

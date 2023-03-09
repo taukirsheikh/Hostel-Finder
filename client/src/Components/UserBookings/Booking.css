@@ -1,0 +1,55 @@
+/* currently card css only */
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 300px;
+    height: 350px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    margin: 20px;
+  }
+.card{
+    
+
+    /* background-color: #fff; */
+    background-color: blanchedalmond;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+  
+.card h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .card h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .card p {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  .card p:last-child {
+    margin-bottom: 0;
+  }
+    
+    .card-container{
+        display: flex;
+        flex-wrap: wrap;
+        /* justify-content: space-between; */
+    }
+
+
+    .book-title{
+        font-size: 2rem;
+        text-align: center;
+        color: wheat;
+    }

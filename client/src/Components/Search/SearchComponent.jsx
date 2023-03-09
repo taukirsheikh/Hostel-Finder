@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { searchHostel as getHostel } from "../redux/searchSlice";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import "./Searchbar.css";
+// import "./Searchbar.css";
 
-const Searchbar = () => {
-  const navigate=useNavigate()
+const SearchbarComponent = () => {
+//   const navigate=useNavigate()
   const searchedHostel= useSelector((state)=>state.search.hostelList)
   const dispatch=useDispatch();
   const [price, setPrice] = useState(0);
@@ -130,7 +130,7 @@ const Searchbar = () => {
         console.log(resp.data)
         dispatch(getHostel(resp.data))
         console.table(searchedHostel)
-        navigate("/hostel-search")
+        
       })
 
     }catch(error){
@@ -289,4 +289,4 @@ const Searchbar = () => {
   );
 };
 
-export default Searchbar;
+export default SearchbarComponent;

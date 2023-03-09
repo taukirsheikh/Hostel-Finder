@@ -8,6 +8,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from django_pandas.io import read_frame
 from sklearn.metrics import jaccard_score
 
+
 from django.shortcuts import get_object_or_404
 from rest_framework import generics, status
 from rest_framework.response import Response
@@ -17,13 +18,24 @@ from api.models import Hostel
 from api.serializers import SearchSerializer
 from sklearn.preprocessing import MultiLabelBinarizer
 from django.conf import settings
+from asgiref.sync import sync_to_async
+from django.utils.decorators import sync_and_async_middleware
+import asyncio
+# from .feature_matrix import FeatureMatrix
+# from api.signals import vectorizer, all_features
+    
 
+
+
+
+
+    #     return feature_matrix
+
+        # self.generate_feature_matrix()
 class SearchHostel(generics.ListCreateAPIView):
     queryset = Hostel.objects.all()
     serializer_class = SearchSerializer
     feature_matrix=None
-
-    
     vectorizer = TfidfVectorizer()
     # all_features = []
     # for hostel in queryset:
@@ -31,27 +43,44 @@ class SearchHostel(generics.ListCreateAPIView):
     #     features = [str(feature) for feature in features]
     #     all_features.append(" ".join(features))
     # feature_matrix = vectorizer.fit_transform(all_features)
-    def generate_feature_matrix(func):
-        def wrapper( *args, **kwargs):
-            self=args[0]
-            all_features = []
-            queryset = self.filter_queryset(self.get_queryset())
-            for hostel in queryset:
-                features = [hostel.hostel_name, hostel.district, hostel.place, hostel.hostel_type, hostel.single_seater, hostel.two_seater, hostel.three_seater, hostel.four_seater, hostel.wifi, hostel.hot_water, hostel.parking, hostel.laundry, hostel.cctv, hostel.fan]
-                features = [str(feature) for feature in features]
-                all_features.append(" ".join(features))
-            self.feature_matrix = self.vectorizer.fit_transform(all_features)
-            return func(*args, **kwargs)
-        return wrapper
-
+    # print(feature_matrix)
+    # def generate_feature_matrix(self):
+        # all_features = []
+        # for hostel in self.get_queryset():
+        #     features = [hostel.hostel_name, hostel.district, hostel.place, hostel.hostel_type, hostel.single_seater, hostel.two_seater, hostel.three_seater, hostel.four_seater, hostel.wifi, hostel.hot_water, hostel.parking, hostel.laundry, hostel.cctv, hostel.fan]
+        #     features = [str(feature) for feature in features]
+        #     all_features.append(" ".join(features))
+        # feature_matrix = self.vectorizer.fit_transform(all_features)
     
-    @generate_feature_matrix
+    
+
+    # def generate_feature_matrix(func):
+    #     def wrapper( *args, **kwargs):
+    #         self=args[0]
+    #         all_features = []
+    #         queryset = self.filter_queryset(self.get_queryset())
+    #         for hostel in queryset:
+    #             features = [hostel.hostel_name, hostel.district, hostel.place, hostel.hostel_type, hostel.single_seater, hostel.two_seater, hostel.three_seater, hostel.four_seater, hostel.wifi, hostel.hot_water, hostel.parking, hostel.laundry, hostel.cctv, hostel.fan]
+    #             features = [str(feature) for feature in features]
+    #             all_features.append(" ".join(features))
+    #         self.feature_matrix = self.vectorizer.fit_transform(all_features)
+    #         return func(*args, **kwargs)
+    #     return wrapper
+         
+    # @generate_feature_matrix 
     def create(self, request, *args, **kwargs):
+        all_features = []
+        for hostel in self.get_queryset():
+            features = [hostel.hostel_name, hostel.district, hostel.place, hostel.hostel_type, hostel.single_seater, hostel.two_seater, hostel.three_seater, hostel.four_seater, hostel.wifi, hostel.hot_water, hostel.parking, hostel.laundry, hostel.cctv, hostel.fan]
+            features = [str(feature) for feature in features]
+            all_features.append(" ".join(features))
+        feature_matrix = self.vectorizer.fit_transform(all_features)
+        
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
 
         input_features = [str(serializer.validated_data['hostel_name']),str(serializer.validated_data['district']), str(serializer.validated_data['place']), str(serializer.validated_data['hostel_type']), str(serializer.validated_data['single_seater']), str(serializer.validated_data['two_seater']), str(serializer.validated_data['three_seater']), str(serializer.validated_data['four_seater'])]
-
+        
         input_matrix = self.vectorizer.transform([" ".join(input_features)])
 
         weights = {
@@ -97,14 +126,17 @@ class SearchHostel(generics.ListCreateAPIView):
             hostel_serializer = self.get_serializer(hostel_details)
             top_hostels_details.append(hostel_serializer.data)
 
+
+        return Response(top_hostels_details)
+
+    
+    
         # Check if there's a hostel with exact name match, move it to the top
         # for i, hostel in enumerate(top_hostels_details):
         #     if hostel['hostel_name'] == input_features[0]:
         #         top_hostels_details.pop(i)
         #         top_hostels_details.insert(0, hostel)
         #         break
-
-        return Response(top_hostels_details)
  
         
 

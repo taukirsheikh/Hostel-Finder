@@ -20,7 +20,7 @@ const hostelCard = [
         gym: true,
       },
     ],
-    hpfimage: "https://media.nomadicmatt.com/hostelrules01.jpg",
+    hpfimage: "https://res.cloudinary.com/dauhj0dgr/image/upload/v1676282475/q5znaeyjybrj01b6bltx.jpg",
     hprices: [
       {
         oneSeater: 11500,
