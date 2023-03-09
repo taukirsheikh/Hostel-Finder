@@ -18,7 +18,8 @@ const Navbar = () => {
         <div className="manage-signin">
           <button
             type="button"
-            className="button"
+            className="manage-button"
+            // css in style.css  outer below
             onClick={() => goToManagerDashboard()}
           >
             Manage Hostel

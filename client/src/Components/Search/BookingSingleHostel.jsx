@@ -56,31 +56,32 @@ export const BookingSingleHostel = (props) => {
    
   return (
    <>
-  <div>
-    <h2>
-        Book This Hostel
-        </h2>
-    <div>
-    <form action="
-    "onSubmit={handleBooking}>
-
-    <label htmlFor="booker-name">Your Name: </label>
-    <input type="text" name="booker_name"  onChange={handleChange} required/>
-    <label htmlFor="contact">Contact No. :</label>
-    <input type="text" name='contact' pattern="^\d{10}$" title='Number must be 10 digit' onChange={handleChange} required/>
-    <label htmlFor="seater">Select Room: </label>
-    <select name='seater' type="number" onChange={handleSeaterChange}>
-        <option  value={1}>Single Seater</option>
-        <option  value={2}>Two Seater</option>
+ <div class="book-container">
+  <h2 class="booking-title">Book This Hostel</h2>
+  <div class="book-form-wrapper">
+    <form onSubmit={handleBooking}>
+      <label htmlFor="booker-name">Your Name:</label>
+      <input type="text" name="booker_name" class="input" onChange={handleChange} required />
+      <label htmlFor="contact">Contact No. :</label>
+      <input type="text" name="contact" class="input" pattern="^\d{10}$" title="Number must be 10 digit" onChange={handleChange} required />
+      <label htmlFor="seater">Select Room:</label>
+      <select name="seater" type="number" class="seater-select" onChange={handleSeaterChange}>
+        <option value={1}>Single Seater</option>
+        <option value={2}>Two Seater</option>
         <option value={3}>Three Seater</option>
         <option value={4}>Four Seater</option>
-    </select>
-    <div>
-        {logcheck ? (<button type='submit'>Book Hostel</button>): <p>Sign In to Book Hostel</p> }
-    </div>
+      </select>
+      <div class="submit-wrapper">
+        {logcheck ? (
+        <button type="submit" class="submit-btn">Book Hostel</button>
+        ) : (
+        <p className='uncheck-sign'>Sign In to Book Hostel</p>
+        )}
+      </div>
     </form>
-    </div>
   </div>
+</div>
+
    
    </>
   )

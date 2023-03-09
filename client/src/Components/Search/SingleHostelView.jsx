@@ -78,7 +78,7 @@ function SingleHostelDetailsView() {
         <Navbar />
 
         <div className="hostel-detail-items">
-          <div>
+          <div className="hostel-images">
             <img
               src={
                 image_1 ||

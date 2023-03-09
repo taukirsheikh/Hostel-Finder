@@ -22,6 +22,8 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     font-size: 1em;
+    /* background-color: #003b4c; */
+
 }
 
 .button:hover {
@@ -29,6 +31,25 @@
     outline-style:solid;
     box-shadow: 0 0 0 2px #9088bd;
     cursor: pointer;
+}
+
+.manage-button{
+  background-color: #003b4c;
+  padding: 10px;
+  border-style: none;
+  color: wheat;
+  border-radius: 5px;
+  font-family:  sans-serif;
+  font-weight: bold;
+  font-size: 0.9em;
+
+}
+
+.manage-button:hover{
+  outline-color: transparent;
+  cursor:pointer;
+  box-shadow: 0 0 0 2px #3d6578;
+  /* box-shadow: 0 0 0 2px #3d2033; */
 }
 
 /* 404 Page CSS Styles */

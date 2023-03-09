@@ -5,6 +5,18 @@
     background-image: linear-gradient(to bottom, #051937, #00243f, #002e45, #013849, #12424c);
 }
 
+/* .hostel-images{
+    
+} */
+
+.book-hostel{
+    /* background-color: red; */
+    position:absolute;
+    right: 20px;
+    z-index: 1;
+
+}
+
 .hostel-detail-items {
     margin-top: 20px;
     margin-left: 20px;
@@ -228,3 +240,5 @@
           transform: scaleX(10) rotate(60deg);
       }
   }
+
+ 

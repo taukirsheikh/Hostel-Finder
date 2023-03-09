@@ -1,0 +1,79 @@
+.book-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  
+  .booking-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .book-form-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    padding: 20px;
+    background-color: #f2f2f2;
+    background-color: #003b4c;
+    border-radius: 10px;
+  }
+  
+  .input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .seater-select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .submit-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .submit-btn {
+    padding: 10px 20px;
+    background-color: #25283d;
+    background-color: wheat;
+    font-weight: bold;
+    color: rgb(32, 67, 67);
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .submit-btn:hover {
+    /* background-color: #3e8e41; */
+    box-shadow: 10px 8px 16px 0 rgb(27, 70, 84);
+    transform: scale(1.03);
+  }
+  
+  .uncheck-sign {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+  }
+  
