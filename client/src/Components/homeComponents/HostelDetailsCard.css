@@ -1,78 +1,429 @@
+@media (max-width:479px) {
+    .hostel-cards-container h2 {
+        padding: 10px;
+        color: wheat;
+        text-align: center;
+        background-color: rgb(255, 0, 21);
+    }
 
-.hostel-cards-container h2 {
-    padding: 10px;
-    color: wheat;
-    text-align: center;
+    .hostel-card--items {
+        padding: 8%;
+        border: 5px solid #ffffff;
+        display: grid;
+        grid-template-columns: repeat(1, 300px);
+        gap: 30px;
+    }
+
+    .hostel-card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s ease-in-out;
+        border-radius: 5px;
+        opacity: 1;
+        background-color: #003b4c;
+    }
+
+    .hostel-profile-image {
+        width: 300px;
+        height: 160px;
+        border-radius: 5px;
+    }
+
+    .hostel-card:hover {
+        box-shadow: 10px 8px 16px 0 rgb(27, 70, 84);
+        transform: scale(1.03);
+    }
+
+    .details-container {
+        padding: 2px 16px;
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hostel-price-container {
+        background-color: #20263a;
+        border-radius: 5px;
+        margin-right: 10px;
+    }
+
+    .price-of-rooms {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        font-size: 12px;
+    }
+
+    .price-of-rooms td,
+    .price-of-rooms th {
+        border: 1px solid rgb(67, 151, 120);
+        border-bottom: 1px solid rgb(67, 151, 120);
+        text-align: center;
+        padding: 3px;
+        border-radius: 5px;
+    }
+
+    .price-of-rooms tr:hover {
+        background-color: rgb(16, 41, 59);
+    }
+
+    .price-of-rooms th {
+        background-color: #1d2231;
+        color: rgb(206, 228, 148);
+    }
+
+    .btn-view--details {
+        text-align: center;
+    }
+
+    .btn-hostel--card {
+        border-radius: 2px;
+        border-style: none;
+        padding: 8px;
+        font-size: 10px;
+        margin-bottom: 5px;
+        font-size: 600;
+        color: #ffffff;
+        background-color: rgb(214, 104, 40);
+    }
+
+    .btn-hostel--card:hover {
+        border: 2px solid #ffffff;
+        border-radius: 5px;
+        padding: 8px;
+        font-size: 10px;
+        margin-bottom: 6px;
+        font-size: 600;
+        color: #ffffff;
+        background-color: rgb(214, 104, 40);
+    }
+
+    
+}
+/* For Mobile Screens */
+@media  (min-width:480px) {
+    .hostel-cards-container h2 {
+            padding: 10px;
+            color: wheat;
+            text-align: center;
+            background-color: blue;
+        }
+    
+        .hostel-card--items {
+            padding-top: 2%;
+            padding-left: 20%;
+            padding-right: 25%;
+            border: 5px solid #ffffff;
+            display: grid;
+            grid-template-columns: repeat(1, 360px);
+            gap: 30px;
+        }
+    
+        .hostel-card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.3s ease-in-out;
+            border-radius: 5px;
+            opacity: 1;
+            background-color: #003b4c;
+        }
+    
+        .hostel-profile-image {
+            margin: 10px;
+            margin-left: 15px;
+            width: 330px;
+            height: 250px;
+            border-radius: 5px;
+        }
+    
+        .hostel-card:hover {
+            box-shadow: 10px 8px 16px 0 rgb(27, 70, 84);
+            transform: scale(1.03);
+        }
+    
+        .details-container {
+            padding: 2px 16px;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+    
+        .hostel-price-container {
+            background-color: #20263a;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+    
+        .price-of-rooms {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+    
+        .price-of-rooms td,
+        .price-of-rooms th {
+            border: 1px solid rgb(67, 151, 120);
+            border-bottom: 1px solid rgb(67, 151, 120);
+            text-align: center;
+            padding: 3px;
+            border-radius: 5px;
+        }
+    
+        .price-of-rooms tr:hover {
+            background-color: rgb(16, 41, 59);
+        }
+    
+        .price-of-rooms th {
+            background-color: #1d2231;
+            color: rgb(206, 228, 148);
+        }
+    
+        .btn-view--details {
+            text-align: center;
+        }
+
 }
 
-.hostel-card--items {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 6.5%;
-    padding-right: 5.5%;
-    display: grid;
-    grid-template-columns: repeat(4, 360px);
-    gap: 30px 30px;
+/* For Tablet Screens */
+
+@media (min-width:885px) {
+
+    .hostel-cards-container h2 {
+        padding: 10px;
+        color: wheat;
+        text-align: center;
+        background-color: blue;
+    }
+
+    .hostel-card--items {
+        padding-top: 2%;
+        padding-left: 14%;
+        border: 5px solid #ffffff;
+        display: grid;
+        grid-template-columns: repeat(2, 360px);
+        gap: 30px;
+    }
+
+    .hostel-card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s ease-in-out;
+        border-radius: 5px;
+        opacity: 1;
+        background-color: #003b4c;
+    }
+
+    .hostel-profile-image {
+        margin: 10px;
+        margin-left: 15px;
+        width: 330px;
+        height: 250px;
+        border-radius: 5px;
+    }
+
+    .hostel-card:hover {
+        box-shadow: 10px 8px 16px 0 rgb(27, 70, 84);
+        transform: scale(1.03);
+    }
+
+    .details-container {
+        padding: 2px 16px;
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hostel-price-container {
+        background-color: #20263a;
+        border-radius: 5px;
+        margin-right: 10px;
+    }
+
+    .price-of-rooms {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    .price-of-rooms td,
+    .price-of-rooms th {
+        border: 1px solid rgb(67, 151, 120);
+        border-bottom: 1px solid rgb(67, 151, 120);
+        text-align: center;
+        padding: 3px;
+        border-radius: 5px;
+    }
+
+    .price-of-rooms tr:hover {
+        background-color: rgb(16, 41, 59);
+    }
+
+    .price-of-rooms th {
+        background-color: #1d2231;
+        color: rgb(206, 228, 148);
+    }
+
+    .btn-view--details {
+        text-align: center;
+    }
+}
+/* For Responsive Screens of More than mobile more less than tablet*/
+@media (min-width: 1130px){
+    .hostel-cards-container h2 {
+        color: rgb(0, 0, 0);
+        text-align: center;
+        background-color: rgb(135, 200, 69);
+    }
+
+    .hostel-card--items {
+        display: grid;
+        grid-template-columns: repeat(3, 360px);
+        gap: 20px 20px;
+        padding: 0%;
+    }
+
+    .hostel-card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s ease-in-out;
+        border-radius: 5px;
+        opacity: 1;
+        background-color: #003b4c;
+    }
+
+    .hostel-profile-image {
+        margin: 10px;
+        margin-left: 15px;
+        width: 330px;
+        height: 250px;
+        border-radius: 5px;
+    }
+
+    .details-container {
+        padding: 2px 16px;
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hostel-price-container {
+        background-color: #20263a;
+        border-radius: 5px;
+        margin-right: 10px;
+    }
+
+    .price-of-rooms {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    .price-of-rooms td,
+    .price-of-rooms th {
+        border: 1px solid rgb(67, 151, 120);
+        border-bottom: 1px solid rgb(67, 151, 120);
+        text-align: center;
+        padding: 3px;
+        border-radius: 5px;
+    }
+
+    .price-of-rooms tr:hover {
+        background-color: rgb(16, 41, 59);
+    }
+
+    .price-of-rooms th {
+        background-color: #1d2231;
+        color: rgb(206, 228, 148);
+    }
+
+    .btn-view--details {
+        text-align: center;
+    }
+    
 }
 
-.hostel-card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: 0.3s ease-in-out;
-    border-radius: 5px;
-    opacity: 1;
-    background-color: #003b4c;
-}
-.hostel-profile-image {
-    margin: 10px; 
-    margin-left: 15px;
-    width: 330px;
-    height: 250px;
-    border-radius: 5px;
+/* For Desktop */
+
+@media (min-width: 1650px) {
+  /*CSS for wide screens 480 800 1100*/
+    .hostel-cards-container h2 {
+        padding: 10px;
+        color: wheat;
+        text-align: center;
+    }
+
+    .hostel-card--items {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 6.5%;
+        padding-right: 5.5%;
+        display: grid;
+        grid-template-columns: repeat(4, 360px);
+        gap: 30px 30px;
+    }
+
+    .hostel-card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s ease-in-out;
+        border-radius: 5px;
+        opacity: 1;
+        background-color: #003b4c;
+    }
+    .hostel-profile-image {
+        margin: 10px; 
+        margin-left: 15px;
+        width: 330px;
+        height: 250px;
+        border-radius: 5px;
+    }
+
+    .hostel-card:hover {
+        box-shadow: 10px 8px 16px 0 rgb(27, 70, 84);
+        transform: scale(1.03);
+    }
+
+    .details-container {
+        padding: 2px 16px;
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hostel-price-container {
+        background-color: #20263a;
+        border-radius: 5px;
+        margin-right: 10px;
+    }
+
+    .price-of-rooms {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    .price-of-rooms td,
+    .price-of-rooms th {
+        border: 1px solid rgb(67, 151, 120);
+        border-bottom: 1px solid rgb(67, 151, 120);
+        text-align: center;
+        padding: 3px;
+        border-radius: 5px;
+    }
+
+    .price-of-rooms tr:hover {
+        background-color: rgb(16, 41, 59);
+    }
+
+    .price-of-rooms th {
+        background-color: #1d2231;
+        color: rgb(206, 228, 148);
+    }
+
+    .btn-view--details {
+        text-align: center;
+    }
 }
 
-.hostel-card:hover {
-    box-shadow: 10px 8px 16px 0 rgb(27, 70, 84);
-    transform: scale(1.03);
-}
 
-.details-container {
-    padding: 2px 16px;
-    color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
 
-.hostel-price-container {
-    background-color: #20263a;
-    border-radius: 5px;
-    margin-right: 10px;
-}
-
-.price-of-rooms {
-    font-family: Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-.price-of-rooms td,
-.price-of-rooms th {
-    border: 1px solid rgb(67, 151, 120);
-    border-bottom: 1px solid rgb(67, 151, 120);
-    text-align: center;
-    padding: 3px;
-    border-radius: 5px;
-}
-
-.price-of-rooms tr:hover {
-    background-color: rgb(16, 41, 59);
-}
-
-.price-of-rooms th {
-    background-color: #1d2231;
-    color: rgb(206, 228, 148);
-}
-
-.btn-view--details {
-    text-align: center;
-}

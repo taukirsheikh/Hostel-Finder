@@ -61,7 +61,7 @@ function HostelDetailsCard() {
                       to={`/hostel-details/${hElem.Hid}`}
                       style={{ textDecoration: "none" }}
                     >
-                      <button type="button" className="button">
+                      <button type="button" className="btn-hostel--card">
                         View Details
                       </button>
                     </Link>
