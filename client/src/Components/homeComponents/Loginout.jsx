@@ -63,7 +63,7 @@ function Loginout() {
     <div>
       {!isLoggedIn ? (
         <span id="sign" className="button" onClick={googleLogin}>
-          Sign In / Sing Up
+          Sign In / Sign Up
         </span>
       ) : (
         <div className=" log-dropdown">
@@ -78,7 +78,7 @@ function Loginout() {
              <Link to="/user-bookings" style={{ textDecoration: 'none' }} className="Links">
              <li >Your Bookings </li>
              </Link> 
-              <li  onClick={handleLogout}> Sing Out</li>
+              <li  onClick={handleLogout}> Sign Out</li>
             </ul>
             
           </div>
