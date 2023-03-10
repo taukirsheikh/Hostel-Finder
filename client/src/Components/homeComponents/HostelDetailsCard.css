@@ -3,6 +3,7 @@
     padding: 10px;
     color: wheat;
     text-align: center;
+    
 }
 
 .hostel-card--items {
@@ -12,7 +13,10 @@
     padding-right: 5.5%;
     display: grid;
     grid-template-columns: repeat(4, 360px);
-    gap: 30px 30px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* gap: 30px 30px; */
+    gap: 30px;
+    /* position: relative; */
 }
 
 .hostel-card {
@@ -21,11 +25,13 @@
     border-radius: 5px;
     opacity: 1;
     background-color: #003b4c;
+    /* position: relative; */
 }
 .hostel-profile-image {
-    margin: 10px; 
-    margin-left: 15px;
-    width: 330px;
+    /* position: absolute; */
+    margin: 0px; 
+    margin-left: 0px;
+    width: 100%;
     height: 250px;
     border-radius: 5px;
 }

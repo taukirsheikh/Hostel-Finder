@@ -29,7 +29,7 @@ function HostelDetailsCard() {
                     <h4>
                       <b>{hElem.hostel_name}</b>
                     </h4>
-                    <p>Location : {hElem.place}</p>
+                    <p>Location : {hElem.place}, {hElem.district}</p>
                   </div>
                   {/* ============= Start of Room Prices ============ */}
                   

@@ -43,11 +43,13 @@ export const BookingSingleHostel = (props) => {
     const handleBooking= async(e)=>{
         e.preventDefault();
         console.log(bookHostel)
+        // alert("booking done")
        
         try{
             const resp=axios.post("http://127.0.0.1:8000/api/bookings/",bookHostel)
             .then((resp)=>{
-                console.log(resp.data)})
+                console.log(resp.data)
+              alert("Booking Done")})
 
         }catch(err){
             console.error(err)
