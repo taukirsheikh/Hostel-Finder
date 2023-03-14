@@ -2,6 +2,13 @@
     width: auto;
     height: 65px;
     background-image: linear-gradient( to right,#0D324D,#7F5A83);
+    /* background-color: #10274f; */
+/* opacity: 0.8;
+background-image: radial-gradient(circle at center center, #205d95, #10274f), repeating-radial-gradient(circle at center center, #205d95, #205d95, 40px, transparent 80px, transparent 40px);
+background-blend-mode: multiply; */
+    
+    /* border-bottom-right-radius:10px ; */
+    /* border-bottom-left-radius:10px ; */
 }
 
 h1 {

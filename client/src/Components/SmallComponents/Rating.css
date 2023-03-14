@@ -1,0 +1,35 @@
+.rate-button{
+    background-color: #151723;
+    border-style: none;
+    color: wheat;
+    font-size: large;
+    font-weight: bold;
+
+}
+
+.rate-button:hover{
+    background-color: #000719;
+    /* border: 1px solid #151723; */
+}
+
+.rate-container{
+    background-color: #0e333e;
+    display: flex;
+    /* height: 200%; */
+    gap:10px;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    border-radius: 5px;
+    margin-top: 2px;
+    
+    
+    
+}
+
+.rate-container>button{
+    /* margin-bottom: 10px; */
+    cursor: pointer;
+    
+}
+

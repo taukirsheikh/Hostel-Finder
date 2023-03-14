@@ -1,5 +1,7 @@
+
 .single-hostel-container {
-    height: 100%;
+   
+    /* height: 10%; */
     background-image: linear-gradient(to bottom left, #2f4f64, #254456, #1b3a48, #122f3b, #0a252e);
     background-image: linear-gradient(to top right, #200e30, #1c1434, #171937, #131d3a, #10213b);
     background-image: linear-gradient(to bottom, #051937, #00243f, #002e45, #013849, #12424c);
@@ -31,6 +33,18 @@
 .money-rooms {
     width: fit-content;
     width: 250px;
+}
+
+.room-vacant{
+    display: flex;
+    flex-direction: column;
+    position:absolute;
+    left:17rem;
+    /* background-color: red; */
+    top:35rem;
+    gap:0.3rem;
+    /* color: #d4c0bf; */
+
 }
 
 .facilities-hostel {
@@ -241,4 +255,14 @@
       }
   }
 
- 
+ .rating-hostel{
+    font-weight: bold;
+    font-size: large;
+    position: relative;
+    top: 0px;
+ }
+
+ .star-icon{
+    position: relative;
+    top:5px;
+ }

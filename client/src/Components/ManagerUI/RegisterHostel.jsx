@@ -9,6 +9,12 @@ function RegisterHostel() {
   const [image_1, setImage_1] = useState(null);
   const [image_2, setImage_2] = useState(null);
   const [image_3, setImage_3] = useState(null);
+  const [roomsAvailable, setRoomsAvailable] = useState({
+    single_seater: false,
+    two_seater: false,
+    three_seater: false,
+    four_seater: false,
+  });
   const [hostelData, setHostelData] = useState({
     manager_id: managerId,
     hostel_name: "",
@@ -33,7 +39,33 @@ function RegisterHostel() {
     fan: false,
     balcony: false,
     map_link: "",
+    single_seater_vacant: false,
+    two_seater_vacant: false,
+    three_seater_vacant: false,
+    four_seater_vacant: false,
   });
+  // rooms_available:JSON.stringify(roomsAvailable),
+  // rooms_available:{"single_seater": false,
+  //   "two_seater": false,
+  //   "three_seater": false,
+  //   "four_seater": false,},
+
+  // const handleRoomsAvailableChange = (event) => {
+  //   const { name, checked } = event.target;
+  //   setHostelData({
+  //     ...hostelData,
+  //     rooms_available: {
+  //       ...hostelData.rooms_available,
+  //       [name]: checked,
+  //     },
+  //   });
+  // };
+  const handleRoomsAvailableChange = (event) => {
+    const { name, checked } = event.target;
+    setHostelData({...hostelData,
+      [name]: checked,
+    });
+  };
   const handleImagesUpload = () => {
     if (image_1) {
       setHostelData({
@@ -79,15 +111,28 @@ function RegisterHostel() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(hostelData);
+    console.log("just hostel data",hostelData);
+    // hostelData.rooms_availabe=JSON.stringify(roomsAvailable)
+    // console.log(hostelData,"from append")
+    // console.table(hostelData,"rooms_available",roomsAvailable);
+    // console.log({hostelData,rooms_availabe:roomsAvailable,})
+    // console.table(hostelData)
+    // const jsonRoom=JSON.stringify(roomsAvailable)
+    // const RegisterHostel={...hostelData,...jsonRoom}
+    
+
 
     try {
       const response = await axios.post(
         "http://127.0.0.1:8000/api/register-hostel/",
+        // "https://4734e750-1e5f-4f8c-b8d7-195e5c0b3724.mock.pstmn.io/Rating",
         hostelData,
         {
           headers: {
             "Content-Type": "multipart/form-data",
+            // "Content-Type": "application/json",
+            
+
           },
         }
       );
@@ -110,7 +155,7 @@ function RegisterHostel() {
             <hr />
           </div>
           {/* form */}
-          <form
+          <form encType="multipart/form-data"
             className="registerForm"
             onSubmit={handleSubmit}
             // encType="multipart/form-data"
@@ -214,6 +259,8 @@ function RegisterHostel() {
             <br />
             <div className="price-bg">
               <label htmlFor="">Price of Rooms :</label>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+              <label>Rooms Available</label>
               <br />
               <br />
               <div className="price-of-room">
@@ -226,6 +273,7 @@ function RegisterHostel() {
                     id="single_seater"
                     onChange={handleChange}
                   ></input>
+                  <input type="checkbox" className="room-checkbox" name="single_seater_vacant" onChange={handleRoomsAvailableChange} />
                 </div>
                 <div className="prices-and-name-inputs">
                   <label htmlFor="two_seater">2 Seater :</label>
@@ -236,6 +284,8 @@ function RegisterHostel() {
                     id="two_seater"
                     onChange={handleChange}
                   ></input>
+                  <input type="checkbox" className="room-checkbox" name="two_seater_vacant" onChange={handleRoomsAvailableChange} />
+
                 </div>
                 <div className="prices-and-name-inputs">
                   <label htmlFor="three_seater">3 Seater :</label>
@@ -246,6 +296,8 @@ function RegisterHostel() {
                     id="three_seater"
                     onChange={handleChange}
                   ></input>
+                  <input type="checkbox" className="room-checkbox" name="three_seater_vacant" onChange={handleRoomsAvailableChange} />
+
                 </div>
                 <div className="prices-and-name-inputs">
                   <label htmlFor="four_seater">4 Seater :</label>
@@ -256,6 +308,8 @@ function RegisterHostel() {
                     id="four_seater"
                     onChange={handleChange}
                   ></input>
+                  <input type="checkbox" className="room-checkbox" name="four_seater_vacant" onChange={handleRoomsAvailableChange} />
+
                 </div>
                 <div className="prices-and-name-inputs">
                   <label htmlFor="">Admission Fee :</label>
@@ -419,8 +473,10 @@ function RegisterHostel() {
               </div>
               <div className="hostel-items">
                 Google Maps Location Link (URL) :
+                <br/>
+                <textarea type="url" name="map_link" onChange={handleChange} id="" cols="30" rows="1"></textarea>
                 <br />
-                <input type="url" name="map_link" onChange={handleChange} />
+                {/* <input type="url" name="map_link" onChange={handleChange} /> */}
               </div>
             </div>
             <br />

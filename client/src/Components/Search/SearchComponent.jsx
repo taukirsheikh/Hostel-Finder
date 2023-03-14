@@ -127,9 +127,9 @@ const SearchbarComponent = () => {
       // const resp= await axios.get('http://127.0.0.1:8000/api/search-hostel', {params:searchDetail})
       const resp= await axios.post('http://127.0.0.1:8000/api/search-hostel/',searchDetail)
       .then((resp)=>{
-        console.log(resp.data)
+        // console.log(resp.data)
         dispatch(getHostel(resp.data))
-        console.table(searchedHostel)
+        // console.table(searchedHostel)
         
       })
 

@@ -127,12 +127,12 @@ function SingleHostelDetails() {
 
             {wifi ? <span className="fact-item" ><FaWifi size="2rem" /> Wifi</span> : null}
             {/* {closet ? <p><FaCloset /> Closet</p> : null} */}
-            {hot_water ? <span><FaHotTub size="2rem" /> Hot Water</span> : null}
-            {laundry ? <span><FaTshirt size="2rem" /> Laundry</span> : null}
-            {parking ? <span><FaParking size="2rem" /> Parking</span> : null}
-            {cctv ? <span><BiCctv size="2rem" /> CCTV</span> : null}
-            {fan ? <span><FaFan size="2rem"/> Fan</span> : null}
-            {balcony ? <span><MdBalcony size="2rem"/> Balcony</span> : null}
+            {hot_water ? <span><FaHotTub size={2} /> Hot Water</span> : null}
+            {laundry ? <span><FaTshirt size={1} /> Laundry</span> : null}
+            {parking ? <span><FaParking size={2} /> Parking</span> : null}
+            {cctv ? <span><BiCctv size={2} /> CCTV</span> : null}
+            {fan ? <span><FaFan size={2}/> Fan</span> : null}
+            {balcony ? <span><MdBalcony size={2}/> Balcony</span> : null}
           
               </div>
                      

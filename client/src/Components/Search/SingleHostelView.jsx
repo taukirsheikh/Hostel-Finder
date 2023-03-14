@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../homeComponents/navbar";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import {MdStarRate} from "react-icons/md"
 
 import "../style.css";
 
@@ -19,10 +20,12 @@ import { BiCctv } from "react-icons/bi";
 import { MdBalcony } from "react-icons/md";
 import { useEffect, useState } from "react";
 import { BookingSingleHostel } from "./BookingSingleHostel";
+import ImageSlider from "../SmallComponents/ImageSlider";
+import RatingHostel from "../SmallComponents/RatingHostel";
 
 function SingleHostelDetailsView() {
   const { hid } = useParams(); // hid is the dynamic route we used in routes
-  console.log(hid);
+  // console.log(hid);
   const [singleHostel, setSingleHostel] = useState([]);
 
   useEffect(() => {
@@ -31,7 +34,7 @@ function SingleHostelDetailsView() {
         const resp = await axios.get(
           `http://127.0.0.1:8000/api/single-hostel/${hid}/`
         );
-        console.table(resp.data);
+        // console.table(resp.data);
         setSingleHostel(resp.data);
       } catch (error) {
         console.error(error);
@@ -69,6 +72,11 @@ function SingleHostelDetailsView() {
     fan,
     balcony,
     map_link,
+    single_seater_vacant,
+    two_seater_vacant,
+    three_seater_vacant,
+    four_seater_vacant,
+    rating,
     manager_id,
   } = singleHostel;
 
@@ -79,13 +87,14 @@ function SingleHostelDetailsView() {
 
         <div className="hostel-detail-items">
           <div className="hostel-images">
-            <img
+            <ImageSlider/>
+            {/* <img
               src={
                 image_1 ||
                 "https://media.istockphoto.com/id/1166153578/de/vektor/vektor-cartoon-studenten-schlafsaal-raum-innen.jpg?s=612x612&w=0&k=20&c=hUVYv9cvL40_ywb89_ms__HBatti4JmbRsKKlSy8bPY="
               }
               alt="Avatar"
-            />
+              /> */}
           </div>
           {/* booking this hostel */}
           <div className="book-hostel"> 
@@ -93,7 +102,10 @@ function SingleHostelDetailsView() {
           </div>
           <div>
             <b>Hostel Name :</b>
-            <span>{hostel_name}</span>
+            <span>{hostel_name}</span> 
+            <span className="rating-hostel">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <MdStarRate className="star-icon"
+            size={30}
+            color="#e3ca65"/>{rating}/5</span>
           </div>
           <div>
             <b>Location :</b>
@@ -110,6 +122,27 @@ function SingleHostelDetailsView() {
           </div>
           <div>
             <strong>Price of Rooms :</strong>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+              <strong></strong>
+              <div className="room-vacant">
+
+              {single_seater_vacant ? (
+                  <span className="fact-item">✔
+                  </span>
+                ) : (<span>❌</span>)}
+              {two_seater_vacant ? (
+                  <span className="fact-item">✔
+                  </span>
+                ) : (<span>❌</span>)}
+              {three_seater_vacant ? (
+                  <span className="fact-item">✔
+                  </span>
+                ) : (<span>❌</span>)}
+              {four_seater_vacant ? (
+                  <span className="fact-item">✔
+                  </span>
+                ) : (<span>❌</span>)}
+              </div>
             <div>
               <br />
 
@@ -204,6 +237,8 @@ function SingleHostelDetailsView() {
               obcaecati debitis odio quasi!
             </p>
           </div>
+          <RatingHostel hostel_id={hostel_id} hostel_rating={rating}/>
+
         </div>
       </div>
     </>

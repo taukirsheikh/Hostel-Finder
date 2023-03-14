@@ -10,6 +10,8 @@
     background-image: linear-gradient(to right top, #201d3d, #0b1b33, #021825, #001117, #010607);
     height: 100%;
     background-repeat: no-repeat;
+    background-image: linear-gradient(to bottom, #051937, #00243f, #002e45, #013849, #12424c);
+
     background-attachment: fixed;
   }
 /* used in manage hostel and sign in */
@@ -61,4 +63,6 @@
     overflow: hidden;
     height: 100%;
     user-select: none;
+    /* background-image: linear-gradient(to bottom, #051937, #00243f, #002e45, #013849, #12424c); */
+
   }

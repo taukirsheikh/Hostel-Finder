@@ -16,7 +16,7 @@ function UpdateDetailsPage() {
           );
           console.table(response.data);
           setHostelData(response.data);
-          console.log("oh really", hostelData);
+          console.log("hostel-data received", hostelData);
           console.log(hostelData.hostel_id);
         } catch (error) {
           console.error(error);
@@ -52,7 +52,13 @@ function UpdateDetailsPage() {
     fan: "",
     balcony: "",
     map_link: "",
+    single_seater_vacant: "",
+    two_seater_vacant: "",
+    three_seater_vacant: "",
+    four_seater_vacant: "",
   });
+
+  // sending
   useEffect(() => {
     if (hostelData) {
       setHostelUpdate({
@@ -81,9 +87,15 @@ function UpdateDetailsPage() {
         fan: hostelData.fan,
         balcony: hostelData.balcony,
         map_link: hostelData.map_link,
+        single_seater_vacant: hostelData.single_seater_vacant,
+        two_seater_vacant: hostelData.two_seater_vacant,
+        three_seater_vacant: hostelData.three_seater_vacant,
+        four_seater_vacant: hostelData.four_seater_vacant,
       });
     }
   }, [hostelData]);
+
+  // receiving from fetch
   console.log("i am from hostelUpdate ", hostelUpdate);
   const {
     hostel_name,
@@ -111,6 +123,10 @@ function UpdateDetailsPage() {
     fan,
     balcony,
     map_link,
+    single_seater_vacant,
+    two_seater_vacant,
+    three_seater_vacant,
+    four_seater_vacant,
   } = hostelUpdate;
   const handleChange = (e) =>
     setHostelUpdate({ ...hostelUpdate, [e.target.name]: e.target.value });
@@ -147,6 +163,7 @@ function UpdateDetailsPage() {
       );
       //  const response= await axios.post("https://12548895-2c90-482a-a57a-42f46b4aed44.mock.pstmn.io/hostel",hostelUpdate);
       console.log(response.data,'success');
+      alert("Hostel Successfully Updated")
     } catch (error) {
       console.log(error);
     }
@@ -272,6 +289,8 @@ function UpdateDetailsPage() {
             <br />
             <div className="price-bg">
               <label htmlFor="">Price of Rooms :</label>
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+              <label>Rooms Available</label>
               <br />
               <br />
               <div className="price-of-room">
@@ -285,6 +304,7 @@ function UpdateDetailsPage() {
                     value={single_seater}
                     onChange={handleChange}
                   ></input>
+                   <input type="checkbox" className="room-checkbox" name="single_seater_vacant" checked={single_seater_vacant} onChange={handleCheckboxChange} />
                 </div>
                 <div className="prices-and-name-inputs">
                   <label htmlFor="two_seater">2 Seater :</label>
@@ -296,6 +316,7 @@ function UpdateDetailsPage() {
                     value={two_seater}
                     onChange={handleChange}
                   ></input>
+                  <input type="checkbox" className="room-checkbox" name="two_seater_vacant" checked={two_seater_vacant} onChange={handleCheckboxChange} />
                 </div>
                 <div className="prices-and-name-inputs">
                   <label htmlFor="three_seater">3 Seater :</label>
@@ -307,6 +328,7 @@ function UpdateDetailsPage() {
                     value={three_seater}
                     onChange={handleChange}
                   ></input>
+                  <input type="checkbox" className="room-checkbox" name="three_seater_vacant" checked={three_seater_vacant} onChange={handleCheckboxChange} />
                 </div>
                 <div className="prices-and-name-inputs">
                   <label htmlFor="four_seater">4 Seater :</label>
@@ -318,6 +340,7 @@ function UpdateDetailsPage() {
                     value={four_seater}
                     onChange={handleChange}
                   ></input>
+                  <input type="checkbox" className="room-checkbox" name="four_seater_vacant" checked={four_seater_vacant} onChange={handleCheckboxChange} />
                 </div>
                 <div className="prices-and-name-inputs">
                   <label htmlFor="">Admission Fee :</label>

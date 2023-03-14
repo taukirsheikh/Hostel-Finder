@@ -1,0 +1,217 @@
+/* .picture-container {
+    position: relative;
+    display: block;
+    width: 500px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 5px;
+    
+  }
+  
+  .picture-container:before,
+  .picture-container:after {
+    content: "⬅";
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    z-index: 2;
+    width: 2rem;
+    height: 2rem;
+    background: dodgerblue;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+  }
+  
+  .picture-container:after {
+    content: "➡";
+    left: auto;
+    right: 1rem;
+  }
+  
+
+  .picture-input {
+    appearance: none;
+    -ms-appearance: none;
+    -webkit-appearance: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transform: translateX(100%);
+    transition: transform ease-in-out 400ms;
+    z-index: 1;
+  }
+  
+  .picture-input:focus {
+    outline: none;
+  }
+  
+  .picture-input:after {
+    content: attr(title);
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+  }
+  
+  .picture-input:not(:checked):before {
+    content: "";
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    top: 50%;
+    left: calc(-100% + 1rem);
+  }
+  
+  .picture-input:checked:before {
+    display: none;
+    left: 1rem;
+  }
+  
+  .picture-input:checked {
+    transform: translateX(0);
+   
+    pointer-events: none;
+    z-index: 0;
+    box-shadow: -5px 10px 20px -15px rgba(0, 0, 0, 1);
+  }
+  
+  .picture-input:checked + .picture-input:before {
+    left: -3rem;
+  }
+  
+  .picture-input:checked + .picture-input ~ .picture-input:before {
+    display: none;
+  }
+   */
+
+   :root {
+    --picture-width: 500px;
+    --picture-height: 300px;
+    --picture-border-radius: 5px;
+  }
+  
+  .picture-container {
+    position: relative;
+    display: block;
+    width: var(--picture-width);
+    height: var(--picture-height);
+    overflow: hidden;
+    border-radius: var(--picture-border-radius);
+  }
+  
+  .picture-container:before,
+  .picture-container:after {
+    content: "⬅";
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    z-index: 2;
+    width: 2rem;
+    height: 2rem;
+    background: #232323;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+  }
+  
+  .picture-container:after {
+    content: "➡";
+    left: auto;
+    right: 1rem;
+  }
+  
+  .picture-input {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: var(--picture-border-radius);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transform: translateX(100%);
+    -webkit-transition: transform ease-in-out 400ms;
+    -moz-transition: transform ease-in-out 400ms;
+    -o-transition: transform ease-in-out 400ms;
+    transition: transform ease-in-out 400ms;
+    z-index: 1;
+  }
+  
+  .picture-input:focus {
+    outline: none;
+  }
+  
+  .picture-input:after {
+    content: attr(title);
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+  }
+  
+  .picture-input:not(:checked):before {
+    content: "";
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    top: 50%;
+    left: calc(-100% + 1rem);
+  }
+  
+  .picture-input:checked:before {
+    display: none;
+    left: 1rem;
+  }
+  
+  .picture-input:checked {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+    /* pointer-event: none; */
+    pointer-events: none;
+    z-index: 0;
+    -webkit-box-shadow: -5px 10px 20px -15px rgba(0, 0, 0, 1);
+    -moz-box-shadow: -5px 10px 20px -15px rgba(0, 0, 0, 1);
+    -o-box-shadow: -5px 10px 20px -15px rgba(0, 0, 0, 1);
+    box-shadow: -5px 10
+  }
+
+  .picture-input:checked + .picture-input:before {
+    left: -3rem;
+  }
+  
+  .picture-input:checked + .picture-input ~ .picture-input:before {
+    display: none;
+  }
