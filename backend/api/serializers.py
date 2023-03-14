@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from api.models import User, Hostel, Booking
+from api.models import User, Hostel, Booking, UserRating
 from rest_framework import exceptions
 import cloudinary.uploader
 
@@ -128,4 +128,19 @@ class SearchSerializer(serializers.ModelSerializer):
 class SingleHostelSerializer(serializers.ModelSerializer):
     class Meta:
         model=Hostel
+        fields="__all__"
+
+
+
+
+# ----------Rating-searilizers-----------------------
+
+class HostelRatingSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Hostel
+        fields=['hostel_id','rating']
+
+class UserRatingSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=UserRating
         fields="__all__"

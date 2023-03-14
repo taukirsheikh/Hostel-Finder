@@ -1,4 +1,5 @@
 from django.db import models
+from collections import defaultdict
 
 # Create your models here.
 class User (models.Model):
@@ -12,6 +13,10 @@ class User (models.Model):
 
     def __str__(self):
         return self.name +' '+ self.email
+    
+
+def get_default_rooms_available():
+    return {room_type: False for room_type in ['single_seater', 'two_seater', 'three_seater', 'four_seater']}
 
 class Hostel(models.Model):
     hostel_id=models.BigAutoField(primary_key=True)
@@ -50,7 +55,14 @@ class Hostel(models.Model):
     balcony=models.BooleanField(default=False)
     # ----------------------------
     map_link=models.URLField(null=True, blank=True)
-
+    rating=models.DecimalField(default=0, null=True, blank=True,max_digits=8, decimal_places=2)
+    # rooms_available = models.JSONField(default=get_default_rooms_available, verbose_name='Rooms Available')
+   
+    single_seater_vacant=models.BooleanField(default=False, null=True, blank=True)
+    two_seater_vacant=models.BooleanField(default=False, null=True, blank=True)
+    three_seater_vacant=models.BooleanField(default=False, null=True, blank=True)
+    four_seater_vacant=models.BooleanField(default=False, null=True, blank=True)
+    
     def __int__(self):
         return self.hostel_id
 
@@ -84,3 +96,13 @@ class Booking(models.Model):
 
     class Meta:
         ordering = ('-booking_date',)
+
+
+
+
+#rating given by user to a hostel
+class UserRating(models.Model):
+    rater_id=models.BigAutoField(primary_key=True)
+    user_rating=models.DecimalField(default=0, null=True, blank=True,max_digits=8, decimal_places=2, verbose_name="rating given by user to hostel")
+    user_id=models.ForeignKey(User, on_delete=models.CASCADE, related_name="user_rating", verbose_name="hosel rater" )
+    hostel_id=models.ForeignKey(Hostel, on_delete=models.CASCADE, verbose_name="hostel rated by user" )

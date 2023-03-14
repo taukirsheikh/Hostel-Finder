@@ -5,8 +5,9 @@ from api.views.bookingView import BookingList, BookedHostel, UserBooking
 from api.views.searchView import SearchHostel
 from api.views.singleHostelView import SingleHostelView
 from django.views.generic import RedirectView
+from api.views.ratingView import HostelRating, UserRatingAPIView, UserNewRating
 
-from api.tests import get_recommendations
+# from api.tests import get_recommendations
 
 
 
@@ -22,6 +23,10 @@ urlpatterns = [
      path('api/bookings/<int:hostel_manager>/', BookedHostel.as_view(), name='list of booking in hostel of manager'),
      path('api/user-bookings/<str:booker_id>/', UserBooking.as_view(), name='User bookings'),
      path("api/search-hostel/", SearchHostel.as_view(), name="search hostel from home page"),
-     path('api/recommendations/', get_recommendations, name='get_recommendations'),
-     path('api/single-hostel/<int:pk>/', SingleHostelView.as_view(), name="view_single_hostel_after_search")
+    #  path('api/recommendations/', get_recommendations, name='get_recommendations'),
+     path('api/single-hostel/<int:pk>/', SingleHostelView.as_view(), name="view_single_hostel_after_search"),
+     path('api/rate-hostel/<int:pk>/', HostelRating.as_view(), name="rate particualr hostel"),
+     path('api/user-rating/<int:user_id>/<int:hostel_id>/', UserRatingAPIView.as_view(), name="rate given by user to a particualr hostel"),
+     path('api/user-rate/', UserRatingAPIView.as_view(), name="prev rate given by user to a particualr hostel"),
+     path('api/new-user-rate/<int:pk>/', UserNewRating.as_view(), name=" New rate given by user to a particualr hostel"),
 ]
