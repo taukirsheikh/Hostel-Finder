@@ -50,3 +50,8 @@
 # #     recommended_hostels = Hostel.objects.filter(hostel_id__in=[most_similar[0][i]+1 for i in range(5)])
 # #     serializer = SearchSerializer(recommended_hostels, many=True)
 # #     return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+
+
+        # input_features = [str(serializer.validated_data['hostel_name']),str(serializer.validated_data['district']), str(serializer.validated_data['place']), str(serializer.validated_data['hostel_type']), str(serializer.validated_data['single_seater']), str(serializer.validated_data['two_seater']), str(serializer.validated_data['three_seater']), str(serializer.validated_data['four_seater']), str(serializer.validated_data['wifi']), str(serializer.validated_data['hot_water']), str(serializer.validated_data['parking']), str(serializer.validated_data['laundry']), str(serializer.validated_data['cctv']), str(serializer.validated_data['fan'])]
