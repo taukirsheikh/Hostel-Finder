@@ -87,7 +87,7 @@ class SearchHostel(generics.ListCreateAPIView):
             'hostel_name': 0.5,
             'district': 0.2,
             'place': 0.4,
-            'hostel_type': 0.2,
+            'hostel_type': 0.6,
             'single_seater': 0.05,
             'two_seater': 0.05,
             'three_seater': 0.05,
@@ -117,7 +117,7 @@ class SearchHostel(generics.ListCreateAPIView):
         ranked_hostels = sorted(scores, key=lambda x: x[1], reverse=True)
 
         # # Get top 10 hostels
-        top_hostels = ranked_hostels[:10]
+        top_hostels = ranked_hostels[:13]
 
         # Get details of top hostels
         top_hostels_details = []

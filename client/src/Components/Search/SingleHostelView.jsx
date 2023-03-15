@@ -231,11 +231,15 @@ function SingleHostelDetailsView() {
                 {description}
               </p>
             <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt
-              dolores eveniet saepe harum similique inventore excepturi,
-              assumenda rerum omnis labore quam ex commodi, soluta hic, aliquam
-              obcaecati debitis odio quasi!
+            Welcome to our cozy and friendly hostel, where you can enjoy a comfortable and affordable stay in the heart of the city. Our hostel is located in a lively and vibrant neighborhood, within walking distance to all the main attractions, restaurants, bars, and shops.
             </p>
+          </div>
+          <br />
+          <div className="map-link">
+          <a href={ map_link || "https://www.google.com/maps/search/hostels+near+me/@27.6918747,85.2730619,13z/data=!3m1!4b1?hl=en" } target="_blank"><img src="https://iili.io/HXvJJ8F.md.png" alt="HXvJJ8F.md.png" border="0"/>
+          {/* View on Map */}
+          <p>View on Map</p>
+          </a>
           </div>
           <RatingHostel hostel_id={hostel_id} hostel_rating={rating}/>
 

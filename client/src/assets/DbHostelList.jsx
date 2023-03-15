@@ -1,7 +1,7 @@
 const SearchedHostelList=[
     {
         "hostel_id": 2,
-        "image_1": "https://res.cloudinary.com/dauhj0dgr/image/upload/v1676282475/q5znaeyjybrj01b6bltx.jpg",
+        "image_1": "https://soaneemrana.org/____impro/1/onewebmedia/IMG_6505.JPG?etag=%2241319-55b3922e%22&sourceContentType=image%2Fjpeg&quality=85",
         "image_2": null,
         "image_3": null,
         "hostel_name": "habib",

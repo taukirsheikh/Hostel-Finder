@@ -255,6 +255,44 @@
       }
   }
 
+
+  .map-link{
+    background-color: #082b37;
+    max-width: fit-content;
+    width: 30%;
+    width: 10rem;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+    border-radius: 20%;
+    padding: 5px;
+    
+  }
+
+  .map-link>a{
+    width: fit-content;
+    text-decoration: none;
+    /* background-color: #082b37; */
+    /* background-color: red; */
+    color: wheat;
+    text-decoration: none !important;
+    font-weight: bold;
+
+  }
+
+  .map-link>a>img{
+    width:40%;
+    
+  }
+  .map-link>a>img>p{
+    font-weight: bold;
+    
+  }
+
  .rating-hostel{
     font-weight: bold;
     font-size: large;
