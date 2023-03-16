@@ -3,6 +3,7 @@ import Navbar from "../homeComponents/navbar";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import {MdStarRate} from "react-icons/md"
+import Comment from "../SmallComponents/Comment"
 
 import "../style.css";
 
@@ -87,7 +88,7 @@ function SingleHostelDetailsView() {
 
         <div className="hostel-detail-items">
           <div className="hostel-images">
-            <ImageSlider/>
+            <ImageSlider image_1={image_1} image_2={image_2} image_3={image_3}/>
             {/* <img
               src={
                 image_1 ||
@@ -242,8 +243,11 @@ function SingleHostelDetailsView() {
           </a>
           </div>
           <RatingHostel hostel_id={hostel_id} hostel_rating={rating}/>
+          
 
         </div>
+        <Comment hostel_id={hostel_id}/>
+
       </div>
     </>
   );

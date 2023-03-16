@@ -8,6 +8,7 @@ export const BookingSingleHostel = (props) => {
     console.log("hostel_id:", hostel_id);
     console.log("manager_id:", manager_id);
     const user_id=useSelector((state)=>state.user.userDetail.user_id);
+    const is_manager=useSelector((state)=>state.user.userDetail.is_manager);
 //    const booker_id=Object.user_id.user_id
     console.log("user_id:", user_id);
     // console.log("booker:", booker_id);
@@ -17,7 +18,7 @@ export const BookingSingleHostel = (props) => {
         "contact": "",
         "seater": 1,
         // "hostel": hostel_id,
-        "booker_id": user_id
+        // "booker_id": user_id
         // "hostel_manager": manager_id
         
     })
@@ -27,6 +28,9 @@ export const BookingSingleHostel = (props) => {
 
     if (manager_id !== undefined) {
         bookHostel.hostel_manager = manager_id ;
+    }
+    if (user_id !== undefined) {
+        bookHostel.booker_id = user_id ;
     }
     const handleChange=(e)=>{
         setBookHostel({
@@ -75,6 +79,7 @@ export const BookingSingleHostel = (props) => {
       </select>
       <div class="submit-wrapper">
         {logcheck ? (
+          is_manager ? (<p className='uncheck-sign'>Manager can't book</p>) :
         <button type="submit" class="submit-btn">Book Hostel</button>
         ) : (
         <p className='uncheck-sign'>Sign In to Book Hostel</p>

@@ -30,3 +30,8 @@ class UserDetailByEmail(generics.RetrieveAPIView):
     queryset=User.objects.all()
     serializer_class=UserSerializer
     lookup_field='email'   
+
+
+class UpdateAsManager(generics.RetrieveUpdateAPIView):
+    queryset=User.objects.all()
+    serializer_class=UserSerializer

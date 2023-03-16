@@ -15,14 +15,15 @@ function RatingHostel(props) {
 
   const logcheck = useSelector((state) => state.user.isLoggedIn);
   const user_id = useSelector((state) => state.user.userDetail.user_id);
+  const is_manager = useSelector((state) => state.user.userDetail.is_manager);
   // console.log(hostel_id, hostel_rating,user_id, "from not rated")
 
   //   const [currentValue, setCurrentValue] = useState(0);
   const [selectedRating, setSelectedRating] = useState(0);
-  const [prevRating, setPrevRating] = useState();
-  const [newPrevRating, setNewPrevRating] = useState();
+  const [prevRating, setPrevRating] = useState(); // rate done by user previosly
+  const [newPrevRating, setNewPrevRating] = useState(); // new rate done by user
   const [raterId, setRaterId] = useState();
-  const [newRating, setNewRating] = useState(0);
+  const [newRating, setNewRating] = useState(0); //rating to send 
   const [rate, SetRate] = useState(0);
   const [CalcRating, setCalcRating] = useState(0);
   const [getRating, setGetRating] = useState({
@@ -75,16 +76,17 @@ function RatingHostel(props) {
         setRaterId(response1.data.rater_id);
         console.log("Rater id is : ", response1.data.rater_id);
         console.log(" Hostel id is :", hostel_id);
-        console.log(" user rating :", prevRating);
+        console.log(" user rating as prevRating :", prevRating);
       } catch (error) {
         console.error("axios error patching wait");
       }
     };
 
     fetchUserRating();
-  }, [getRating, hostel_id]);
+  }, [getRating, hostel_id, user_id]);
   // ------------------------------------------------------------
   const handleSubmit = async (e) => {
+
     e.preventDefault();
     const givenRating = selectedRating;
     console.log(givenRating, "is givenRating taken from selected Rating");
@@ -95,19 +97,21 @@ function RatingHostel(props) {
             setNewPrevRating(hostel_rating);
             console.log(newRating, "is new and prev is same as", newPrevRating);
             alert("Rating added successfully");
-          } else if (prevRating === 0) {
+          } else if (prevRating == 0 && hostel_rating==0) {
             setNewRating(selectedRating);
             setNewPrevRating(selectedRating);
             console.log(
               newRating,
-              "is new rate if hostel rate is 0 having prev rate",
-              newPrevRating
+              "is new rate if hostel rate  is 0 having prev rate",
+              newPrevRating,"hostel rateis :", hostel_rating
             );
+            // alert("Hostel Rated Successfully");
       
-            if (newRating !== 0) {
+            if (newRating !== 0 && hostel_rating!==0) {
+              console.log(newRating,"rating being sent to patch")
               const response2 = await axios.patch(
                 `http://127.0.0.1:8000/api/rate-hostel/${hostel_id}/`,
-                { rating: newRating }
+                { rating: newRating}
               );
               console.log("Update response data:", response2.data);
               console.log(newPrevRating, "newPrev ratings");
@@ -124,19 +128,23 @@ function RatingHostel(props) {
               alert("Hostel Rated Successfully");
             }
           } else {
-            const newPrevRating = (prevRating + parseFloat(selectedRating)) / 2;
+            console.log("before calc", hostel_rating,"selected rating",selectedRating)
+            
+            const newhostelrating = (parseFloat(hostel_rating) + selectedRating) / 2;
             console.log(
-              newPrevRating,
-              "is new prev rating and",
+              newhostelrating,
+              "is new prev after calc of user rating and",
               "selectedRating:",
               selectedRating,
               "prevRating:",
-              prevRating
+              prevRating, "prev hostel rate was:", hostel_rating
             );
-            if (newPrevRating) {
+            if (newhostelrating) {
+              const hostelrate=newhostelrating.toFixed(2)
+
               const response2 = await axios.patch(
                 `http://127.0.0.1:8000/api/rate-hostel/${hostel_id}/`,
-                { rating: newPrevRating }
+                { rating: hostelrate }
               );
               console.log("Update response data:", response2.data);
       
@@ -429,6 +437,7 @@ function RatingHostel(props) {
       /> */}
 
         {logcheck ? (
+          is_manager ? ( <p className="uncheck-sign">Manager Can't Rate</p> ) :
           <button
             style={styles.rate_button}
             className="rate-button"

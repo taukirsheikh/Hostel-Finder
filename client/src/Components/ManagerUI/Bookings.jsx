@@ -26,11 +26,12 @@ function Bookings() {
                 <th>Seater</th>
                 <th>Contact</th>
                 <th>Booked Date</th>
+                <th>Confirmed Status</th>
               </tr>
             </thead>
             <tbody>
               {!bookings ? (
-                <h1>Hostel Bookings Will Appear Here</h1>
+                <tr>Hostel Bookings Will Appear Here</tr>
               ) : (
                 bookings.map((booking, index) => (
                   <tr key={booking.booking_id}>
@@ -40,9 +41,12 @@ function Bookings() {
                     <td>{booking.seater}</td>
                     <td>{booking.contact}</td>
                     <td>{formatDate(booking.booking_date)}</td>
+                    <td>Not Confirmed 
+                    <input type="checkbox" />
+                    </td>
                   </tr>
                 ))
-              )}
+                )}
             </tbody>
           </table>
         </div>

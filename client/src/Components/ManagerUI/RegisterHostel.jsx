@@ -6,6 +6,7 @@ function RegisterHostel() {
   const managerId = useSelector((state) =>
     parseInt(state.user.userDetail.user_id)
   );
+  const is_manager=useSelector((state)=>state.user.userDetail.is_manager);
   const [image_1, setImage_1] = useState(null);
   const [image_2, setImage_2] = useState(null);
   const [image_3, setImage_3] = useState(null);
@@ -110,6 +111,7 @@ function RegisterHostel() {
   };
 
   const handleSubmit = async (event) => {
+    
     event.preventDefault();
     console.log("just hostel data",hostelData);
     // hostelData.rooms_availabe=JSON.stringify(roomsAvailable)
@@ -141,6 +143,11 @@ function RegisterHostel() {
       // const response= await axios.post("https://eoa0kngndulec0v.m.pipedream.net",hostelData);
       // const response= await axios.post("https://12548895-2c90-482a-a57a-42f46b4aed44.mock.pstmn.io/hostel",hostelData);
       console.log(response.data);
+
+      const response2 = await axios.patch(`http://127.0.0.1:8000/api/set-manager/${managerId}/`,{is_manager:true});
+    const data2 = response2.data;
+    console.table(data2)
+    alert("Hostel Regestered")
     } catch (error) {
       console.log(error);
     }

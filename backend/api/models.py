@@ -10,6 +10,7 @@ class User (models.Model):
     given_name = models.CharField(max_length=100, blank=True)
     email_verified = models.BooleanField(blank=True, null=True)
     sub = models.CharField(max_length=100, null=True, blank=True)
+    is_manager=models.BooleanField(default=False)
 
     def __str__(self):
         return self.name +' '+ self.email
@@ -70,7 +71,7 @@ class Hostel(models.Model):
 
     def __str__(self):
         # return self.hostel_name+' '+self.hostel_type
-        return f"{self.hostel_id} - {self.hostel_name}-{self.manager_id}"
+        return f"{self.hostel_id} - {self.hostel_name}-{self.manager_id}-{self.place}"
 
 
 class Booking(models.Model):
@@ -106,3 +107,11 @@ class UserRating(models.Model):
     user_rating=models.DecimalField(default=0, null=True, blank=True,max_digits=8, decimal_places=2, verbose_name="rating given by user to hostel")
     user_id=models.ForeignKey(User, on_delete=models.CASCADE, related_name="user_rating", verbose_name="hosel rater" )
     hostel_id=models.ForeignKey(Hostel, on_delete=models.CASCADE, verbose_name="hostel rated by user" )
+
+
+#reviews
+class Review(models.Model):
+    review_id=models.BigAutoField(primary_key=True)
+    review=models.TextField(max_length=1000, blank=True, null=True)
+    user_id=models.ForeignKey(User, on_delete=models.CASCADE)
+    hostel_id=models.ForeignKey(Hostel, on_delete=models.CASCADE)

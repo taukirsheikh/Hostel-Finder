@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from api.models import User, Hostel, Booking, UserRating
+from api.models import User, Hostel, Booking, UserRating, Review
 from rest_framework import exceptions
 import cloudinary.uploader
 
@@ -143,4 +143,24 @@ class HostelRatingSerializer(serializers.ModelSerializer):
 class UserRatingSerializer(serializers.ModelSerializer):
     class Meta:
         model=UserRating
+        fields="__all__"
+
+
+
+class ReviewSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Review
+        fields="__all__"
+
+
+class ReviewOnHostelSerializer(serializers.ModelSerializer):
+    # user_id = serializers.CharField(source='user_id.name')
+    class CustomUserSerializer(serializers.ModelSerializer):
+        class Meta:
+            model=User
+            fields=['name','picture']
+    user_id=CustomUserSerializer()
+
+    class Meta:
+        model=Review
         fields="__all__"
