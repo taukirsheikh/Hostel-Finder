@@ -26,4 +26,6 @@ class UserBooking(generics.ListAPIView):
         return queryset
 
 
-   
+class ConfirmBookng(generics.RetrieveUpdateAPIView):
+    queryset=Booking.objects.all()
+    serializer_class=ManagerBookingSerializer

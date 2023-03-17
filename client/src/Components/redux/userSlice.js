@@ -5,7 +5,8 @@ const userSlice = createSlice({
     user: null,
     isLoggedIn: false,
     userDetail: [],
-    hostelBookings: null,
+    hostelBookings: [],
+    bookingConfirm:0,
     // console.log(user)
   },
   reducers: {
@@ -26,8 +27,12 @@ const userSlice = createSlice({
     fetchBookings: (state, action) => {
       state.hostelBookings = action.payload
     },
+    confirmBooking: (state) => {
+      state.bookingConfirm +=1
+    },
+
   },
 
 });
-export const { login, logout, fetchDetail, fetchBookings } = userSlice.actions;
+export const { login, logout, fetchDetail, fetchBookings, confirmBooking } = userSlice.actions;
 export default userSlice;

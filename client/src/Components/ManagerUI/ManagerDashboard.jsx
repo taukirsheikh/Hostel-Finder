@@ -9,9 +9,12 @@ import axios from "axios";
 import store from "../redux/store";
 
 import "./style.css";
+import { useSelect } from "@mui/base";
 
 function ManagerDashboard() {
   const email = useSelector((state) => state.user.user.email);
+  const bookingConfirm=useSelector((state)=>state.user.bookingConfirm)
+  // const booking_status=useSelector((state)=>state.user.hostelBookings.booking_status)
   const [manager_ID, setManager_ID] = useState();
   const dispatch = useDispatch();
 
@@ -52,7 +55,7 @@ function ManagerDashboard() {
       };
       fetchBooking();
     }
-  });
+  },[bookingConfirm, manager_ID]);
 
   return (
     <>

@@ -78,7 +78,7 @@ gap: 20px;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     cursor: pointer;
     /* background-color: aqua; */
-    
+    background-color: #030c13;
     border-bottom-style: solid;
     border-bottom-color: #161729;
     border-radius: 5px;
@@ -93,7 +93,8 @@ gap: 20px;
 
 
 .navItems:hover{
-    background-color:#161729;
+    background-color:#46290b;
+    /* background-color: rgb(33, 49, 60); */
 }
 
 .navItems:active{
@@ -442,9 +443,23 @@ margin-left: 10px;
     border: none;
   }
 
+  .booking-confirm-btn{
+    /* font-family: cursive; */
+    background-color: #0a1f2e;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 75%;
+    padding: 5px;
+    margin-left: 25px;
+    color: wheat;
+    border: none;
+    
+  }
 
-
-
-
-
+  .booking-confirm-btn:hover{
+    background-color: #0a0810;
+    
+    color: wheat;
+    color: lightseagreen;
+  }
 

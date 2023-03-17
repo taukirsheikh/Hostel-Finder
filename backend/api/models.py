@@ -94,6 +94,7 @@ class Booking(models.Model):
     seater=models.IntegerField(choices=Seater)
     # bookers_email=models.EmailField(default="mohammedtaukirsheikh@gmail.com",null=True,blank=True)
     booking_date=models.DateField(auto_now=True )
+    booking_status=models.BooleanField(default=False, verbose_name='to confirm the booking by manager')
 
     class Meta:
         ordering = ('-booking_date',)
