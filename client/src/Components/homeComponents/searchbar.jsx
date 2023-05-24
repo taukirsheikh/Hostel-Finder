@@ -169,7 +169,7 @@ const Searchbar = () => {
                   name="place"
                   onChange={handleChange}
                 />
-                <select name="seater" id="" onChange={handleSeaterChange}>
+                <select name="seater" id="" onChange={handleSeaterChange} className="seater-type">
                   <option value="single_seater"> 1 Seater </option>
                   <option value="two_seater"> 2 Seater </option>
                   <option value="three_seater"> 3 Seater </option>

@@ -131,12 +131,7 @@ class SearchHostel(generics.ListCreateAPIView):
 
     
     
-        # Check if there's a hostel with exact name match, move it to the top
-        # for i, hostel in enumerate(top_hostels_details):
-        #     if hostel['hostel_name'] == input_features[0]:
-        #         top_hostels_details.pop(i)
-        #         top_hostels_details.insert(0, hostel)
-        #         break
+     
  
         
 

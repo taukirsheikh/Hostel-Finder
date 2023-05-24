@@ -71,7 +71,7 @@ class Hostel(models.Model):
 
     def __str__(self):
         # return self.hostel_name+' '+self.hostel_type
-        return f"{self.hostel_id} - {self.hostel_name}-{self.manager_id}-{self.place}"
+        return f"{self.hostel_id} - {self.hostel_name}-{self.district}-{self.place}"
 
 
 class Booking(models.Model):

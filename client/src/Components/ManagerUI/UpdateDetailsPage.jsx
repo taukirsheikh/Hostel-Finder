@@ -534,12 +534,8 @@ function UpdateDetailsPage() {
               <div className="hostel-items">
                 Google Maps Location Link (URL) :
                 <br />
-                <input
-                  type="url"
-                  name="map_link"
-                  value={map_link}
-                  onChange={handleChange}
-                />
+                <textarea type="url" name="map_link" onChange={handleChange} id="" cols="30" rows="1"></textarea>
+                
               </div>
             </div>
             <br />

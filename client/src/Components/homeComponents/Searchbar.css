@@ -7,8 +7,10 @@
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     
-    /* background-image: url('https://i.ibb.co/vqJHWXc/Sajilo-Hostel.png'); */
+    /* background-image: url('https://images.unsplash.com/photo-1623625434462-e5e42318ae49?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80'); */
+    background-image: url('https://images.unsplash.com/photo-1520277739336-7bf67edfa768?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80');
     /* background-image: url('https://media.istockphoto.com/id/1166153578/de/vektor/vektor-cartoon-studenten-schlafsaal-raum-innen.jpg?s=612x612&w=0&k=20&c=hUVYv9cvL40_ywb89_ms__HBatti4JmbRsKKlSy8bPY='); */
+    /* background-image: url("src/assets/hostel1.jpg"); */
 }
 
 .search-items {
@@ -44,7 +46,9 @@
 
 
 }
-
+.seater-type {
+    border-radius: 5px;
+}
 .hosteltype {
     width: 5rem;
 }
